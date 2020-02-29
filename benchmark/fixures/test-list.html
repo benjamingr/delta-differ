@@ -1,0 +1,779 @@
+<body class="App ng-scope" overflow-container="">
+    <div id="app-layout" ng-class="{
+      'App-banner-displayed': showAppBanner(),
+      'page-banner-displayed': isPageBannerDisplayed()
+    }">
+      <!-- ngIf: showSideBarAndHeader() && authenticated() --><sidebar class="App-sidebar ng-scope authenticated" ng-if="showSideBarAndHeader() &amp;&amp; authenticated()" ng-class="{'authenticated' : authenticated() || isStyleguide() || !isCodePage() }"><nav class="App-nav">
+      <!-- ngIf: !scenarioService.isCurrentTest -->
+      <!-- ngIf: scenarioService.isCurrentTest --><app-nav-item ng-if="scenarioService.isCurrentTest" icon="edit" label="Editor" ng-class="{'is-recording': scenarioService.isRecording, 'isActive': $state.current.name.indexOf('project.test') >= 0}" sref="project.test(vm.scenarioService.getTestParams())" class="ng-scope ng-isolate-scope">
+      <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.test(vm.scenarioService.getTestParams())" ui-sref-active="isActive" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/gbaBlqXlT5?result-id=vC8Jnfdaww">
+              <span class="icon-background f-col-center Editor">
+                  <i class="Icon-edit"></i>
+              </span>
+              <span class="IconTooltip ng-binding">Editor</span>
+      </a><!-- end ngIf: !vm.hasCustomContent -->
+      <!-- ngIf: vm.hasCustomContent -->
+  </app-nav-item><!-- end ngIf: scenarioService.isCurrentTest -->
+  
+      <div class="separator"></div>
+  
+      <app-nav-item icon="clickim" label="Automate" sref="project.automate" class="ng-isolate-scope">
+      <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope isActive" ui-sref="project.automate" ui-sref-active="isActive" href="#/project//branch//automate">
+              <span class="icon-background f-col-center Automate">
+                  <i class="Icon-clickim"></i>
+              </span>
+              <span class="IconTooltip ng-binding">Automate</span>
+      </a><!-- end ngIf: !vm.hasCustomContent -->
+      <!-- ngIf: vm.hasCustomContent -->
+  </app-nav-item>
+      <!-- ngIf: userService.isAdmin() --><app-nav-item ng-if="userService.isAdmin()" icon="bugim" label="Capture" sref="project.bugs" class="ng-scope ng-isolate-scope">
+      <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.bugs" ui-sref-active="isActive" href="#/project//branch//bugs">
+              <span class="icon-background f-col-center Capture">
+                  <i class="Icon-bugim"></i>
+              </span>
+              <span class="IconTooltip ng-binding">Capture</span>
+      </a><!-- end ngIf: !vm.hasCustomContent -->
+      <!-- ngIf: vm.hasCustomContent -->
+  </app-nav-item><!-- end ngIf: userService.isAdmin() -->
+      <!-- ngIf: hasTestVisualization() -->
+      <app-nav-item icon="batch" label="Runs" sref="project.runs" class="ng-isolate-scope">
+      <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.runs" ui-sref-active="isActive" href="#/project//runs">
+              <span class="icon-background f-col-center Runs">
+                  <i class="Icon-batch"></i>
+              </span>
+              <span class="IconTooltip ng-binding">Runs</span>
+      </a><!-- end ngIf: !vm.hasCustomContent -->
+      <!-- ngIf: vm.hasCustomContent -->
+  </app-nav-item>
+  
+      <div class="separator"></div>
+  
+      <!-- ngIf: !scenarioService.isInDemoProject() --><app-nav-item ng-if="!scenarioService.isInDemoProject()" icon="cog" label="Settings" ng-class="{'isActive': $state.current.name.indexOf('project.settings') >= 0}" sref="project.settings" class="ng-scope ng-isolate-scope">
+      <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.settings" ui-sref-active="isActive" href="#/project//settings">
+              <span class="icon-background f-col-center Settings">
+                  <i class="Icon-cog"></i>
+              </span>
+              <span class="IconTooltip ng-binding">Settings</span>
+      </a><!-- end ngIf: !vm.hasCustomContent -->
+      <!-- ngIf: vm.hasCustomContent -->
+  </app-nav-item><!-- end ngIf: !scenarioService.isInDemoProject() -->
+      <!-- ngIf: !scenarioService.isInDemoProject() --><app-nav-item ng-if="!scenarioService.isInDemoProject()" icon="users" label="Users" sref="project.users" class="ng-scope ng-isolate-scope">
+      <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.users" ui-sref-active="isActive" href="#/project//users">
+              <span class="icon-background f-col-center Users">
+                  <i class="Icon-users"></i>
+              </span>
+              <span class="IconTooltip ng-binding">Users</span>
+      </a><!-- end ngIf: !vm.hasCustomContent -->
+      <!-- ngIf: vm.hasCustomContent -->
+  </app-nav-item><!-- end ngIf: !scenarioService.isInDemoProject() -->
+      <!-- ngIf: userService.isAdmin() --><app-nav-item ng-if="userService.isAdmin()" icon="admin" label="Admin" sref="project.admin" class="ng-scope ng-isolate-scope">
+      <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.admin" ui-sref-active="isActive" href="#/project//admin">
+              <span class="icon-background f-col-center Admin">
+                  <i class="Icon-admin"></i>
+              </span>
+              <span class="IconTooltip ng-binding">Admin</span>
+      </a><!-- end ngIf: !vm.hasCustomContent -->
+      <!-- ngIf: vm.hasCustomContent -->
+  </app-nav-item><!-- end ngIf: userService.isAdmin() -->
+  
+      <!-- ngIf: shouldShowStyleguide -->
+  
+      <!-- ngIf: shouldShowStyleguide -->
+  
+      <mobile-connection-indicator class="ng-isolate-scope">
+  <!-- ngIf: vm.projectsService.isIos() && vm.featureFlagsService.flags.showMobileRoomIndicator.isEnabled() --></mobile-connection-indicator>
+  </nav>
+  </sidebar><!-- end ngIf: showSideBarAndHeader() && authenticated() -->
+      <!-- ngIf: !authenticated() && !isStyleguide() && !isCodePage() -->
+      <!-- ngIf: authenticated() && !isStyleguide() && !isCodePage() --><div class="App-header ng-scope authenticated" ng-if="authenticated() &amp;&amp; !isStyleguide() &amp;&amp; !isCodePage()" ng-class="{'authenticated' : authenticated()}">
+        <!-- ngIf: showSideBarAndHeader() --><default-header ng-if="showSideBarAndHeader()" class="ng-scope ng-isolate-scope">
+      <app-header class="DefaultHeader__default-header___2pYA4 ng-isolate-scope">
+  <div class="AppHeader__app-header___SUcRV">
+      <company-logo class="ng-isolate-scope">
+      <div class="CompanyLogo__header-company___1szSF" mobx-autorun="">
+          <a ui-sref="company.projects({companyId: vm.companiesService.getCompanyId()})" class="CompanyLogo__company-logo___2qUou ng-binding" href="#/company/mLVRPA2fJX/projects">T</a>
+          <company-select class="ng-isolate-scope">
+  <div company-select="">
+      <!-- ngIf: vm.showDropdown --><div ng-mouseleave="vm.closeDropdown()" ng-if="vm.showDropdown" ng-class="{'CompanySelect__dropdown-opened___-Ro6C': vm.isDropdownOpened}" class="CompanySelect__companies-list-arrow___TPIVB ng-scope">
+          <i ng-mouseenter="vm.openDropdown()" class="Icon-caret-down--white"></i>
+      </div><!-- end ngIf: vm.showDropdown -->
+      
+      <div class="CompanySelect__companies-list-menu___2R30C ng-hide" ng-show="vm.isDropdownOpened" ng-mouseenter="vm.openDropdown()" ng-mouseleave="vm.closeDropdown()">
+          <!-- ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              #
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              *
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              *.*
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              *.*
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              ,fdkjs
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+              -
+          </div><!-- end ngRepeat: company in vm.companies track by company.id -->
+      </div>
+  </div>
+  </company-select>
+      </div>
+  </company-logo>
+  
+      <div class="AppHeader__app-header-content___1nAbY" ng-transclude="">
+          <div class="DefaultHeader__default-header-content___2xsIN ng-scope">
+              <app-header-left class="ng-isolate-scope">
+  <div class="AppHeaderLeft__app-header-left___1YSG5">
+      <div ng-transclude="">
+                  <project-list class="select-list ng-scope ng-isolate-scope"><div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-not-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="model.selected" theme="select2" search-enabled="true" on-select="selectProject($item)"><a class="select2-choice ui-select-match ng-scope" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude="">
+          <span class="ng-binding ng-scope">admin_default_project<!-- ngIf: $select.selected.isMobileWeb --></span>
+      </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-0" aria-label="Select box" aria-activedescendant="ui-select-choices-row-0-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search" style="width: 10px;"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="project in projects | filter: { name : $select.search} | limitTo: 20"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-0" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-0" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+  </project-list>
+                  <branch-list class="select-list ng-scope ng-isolate-scope"><div ng-show="branchList.length > 1" class="select-list ng-hide">
+      <i class="Icon-separator select-list"></i>
+      <div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-not-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="selected.branch" theme="select2" search-enabled="true" on-select="checkoutBranch($item)"><a class="select2-choice ui-select-match ng-scope" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude="">
+              <span class="ng-binding ng-scope">Branch: master</span>
+          </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-1" aria-label="Select box" aria-activedescendant="ui-select-choices-row-1-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search" style="width: 10px;"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="branch in branchList | filter: { name : $select.search}"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-1" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: branch in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: branch in $select.items --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-1" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+  </div>
+  </branch-list>
+              </div>
+  </div></app-header-left>
+  
+              <app-header-center class="ng-isolate-scope">
+  <div class="AppHeaderCenter__app-header-center___2gOIf">
+      <trial-banner class="ng-isolate-scope">
+  <!-- ngIf: vm.isInTrial -->
+  </trial-banner>
+  </div></app-header-center>
+  
+              <app-header-right class="ng-isolate-scope"><div app-header-right="" class="AppHeaderRight__app-header-right___3jbWK" ng-transclude="">
+                  <!-- ngIf: vm.extensionService.hasUpdate -->
+                  <educate-panel-action class="ng-scope ng-isolate-scope">
+              <header-action class="flex-row ng-isolate-scope" title="Education Panel" label="Educate" icon="educate" on-click="vm.showEducationPanel()">
+              <button class="HeaderAction__header-action___18h6L " ng-click="vm.onClick()" title="Education Panel">
+                <i class="Icon-educate" aria-hidden="true"></i>
+                <span class="IconLabel HeaderAction__icon-label___208Qu ng-binding">Educate</span>
+              </button>
+              </header-action>
+              </educate-panel-action>
+                  <!-- ngIf: !vm.scenarioService.isInDemoProject() --><header-action title="Add new branch" label="Fork" icon="add-branch" on-click="vm.createNewBranch()" ng-if="!vm.scenarioService.isInDemoProject()" class="ng-scope ng-isolate-scope">
+              <button class="HeaderAction__header-action___18h6L " ng-click="vm.onClick()" title="Add new branch">
+                <i class="Icon-add-branch" aria-hidden="true"></i>
+                <span class="IconLabel HeaderAction__icon-label___208Qu ng-binding">Fork</span>
+              </button>
+              </header-action><!-- end ngIf: !vm.scenarioService.isInDemoProject() -->
+                  <header-action title="Add New Test" label="New test" icon="plus" on-click="vm.createNewTest()" class="ng-scope ng-isolate-scope">
+              <button class="HeaderAction__header-action___18h6L " ng-click="vm.onClick()" title="Add New Test">
+                <i class="Icon-plus" aria-hidden="true"></i>
+                <span class="IconLabel HeaderAction__icon-label___208Qu ng-binding">New test</span>
+              </button>
+              </header-action>
+                  <div class="Icon-separator--center --grey ng-scope"></div>
+                  <user-menu class="ng-scope ng-isolate-scope">
+  <div class="UserMenu__user-main___FhoVO">
+      <user-avatar-small on-click="vm.toggleProfileMenu($event)" class="ng-isolate-scope">
+              <div class="flex-row-center">
+                  <!-- ngIf: vm.userService.isLoggedIn() && vm.userImage --><img ng-if="vm.userService.isLoggedIn() &amp;&amp; vm.userImage" class="UserAvatar__user-avatar___2IPV8 UserAvatar__user-avatar-small___2LU6N ng-scope UserAvatar__clickable___3kL3d" ng-class="{'UserAvatar__clickable___3kL3d': vm.onClick}" ng-click="vm.onClick({$event})" ng-src="https://lh3.googleusercontent.com/-LsVaaDpz050/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbDhoHbP2R1w0hqtqs05Q8Ffc1ZiJA/mo/photo.jpg?sz=50" src="https://lh3.googleusercontent.com/-LsVaaDpz050/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbDhoHbP2R1w0hqtqs05Q8Ffc1ZiJA/mo/photo.jpg?sz=50"><!-- end ngIf: vm.userService.isLoggedIn() && vm.userImage -->
+                       
+                   <!-- ngIf: vm.userService.isLoggedIn() && !vm.userImage -->
+              </div>
+              </user-avatar-small>
+  
+      <!-- ngIf: vm.showSubMenu -->
+  </div>
+  </user-menu>
+              </div></app-header-right>
+          </div>
+      </div>
+  </div></app-header>
+      </default-header><!-- end ngIf: showSideBarAndHeader() -->
+        <!-- ngIf: showCompanyHeader() -->
+        <app-banner class="ng-isolate-scope">
+  <!-- ngIf: vm.appBannerService.shouldDisplayTrialBanner() -->
+  <!-- ngIf: vm.appBannerService.shouldDisplayOldVersionBanner() -->
+  </app-banner>
+      </div><!-- end ngIf: authenticated() && !isStyleguide() && !isCodePage() -->
+      <!-- ngIf: authenticated() && !isStyleguide() && !isCodePage() --><validate-phone-number ng-if="authenticated() &amp;&amp; !isStyleguide() &amp;&amp; !isCodePage()" class="ng-scope ng-isolate-scope"></validate-phone-number><!-- end ngIf: authenticated() && !isStyleguide() && !isCodePage() -->
+      <div id="main-pane" ng-class="{
+        'App-sidebar-disabled': !showSideBarAndHeader(),
+        'authenticated': authenticated() || isStyleguide() || isCodePage(),
+        'styleguide': isStyleguide(),
+        'code-mode': isCodePage()
+      }" class="authenticated">
+        <main class="App-main" ng-class="{'isLoading': isLoading}" data-loading-text="Loading...">
+          <!-- uiView: --><ui-view class="ng-scope"><!-- uiView: --><ui-view class="ng-scope"><automate-container class="ng-scope ng-isolate-scope">
+  <div class="tst-automate">
+      <div class="tst-tab-nav-bar">
+          <span ui-sref="project.automate.tests" ui-sref-active="isActive" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/automate/tests/" class="isActive">
+              TESTS
+          </span>
+          <span ui-sref="project.automate.suites" ui-sref-active="isActive" ng-class="{isActive: vm.$state.includes('project.automate.suiteTests')}" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/automate/suites">
+              SUITES
+          </span>
+          <span ui-sref="project.automate.plans" ui-sref-active="isActive" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/automate/plans">
+              PLANS
+          </span>
+          <span ui-sref="project.automate.labels" ui-sref-active="isActive" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/automate/labels">
+              LABELS
+          </span>
+          <span ui-sref="project.automate.sharedSteps" ui-sref-active="isActive" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/automate/sharedSteps">
+              SHARED STEPS
+          </span>
+      </div>
+      <!-- uiView: --><ui-view class="ng-scope"><div class="TestList List ng-scope" ng-class="{
+    'isLoading': !ctrl.isListInitialized(),
+    '--embedded': ctrl.isEmbedded
+  }" data-loading-text="Loading Tests...">
+  
+      <!-- ngIf: ctrl.isListInitialized() && ctrl.isEmptyList() && ctrl.state.name !== 'project.bugs' -->
+      <!-- ngIf: ctrl.isListInitialized() && ctrl.isEmptyList() && ctrl.state.name === 'project.bugs' -->
+  
+      <!-- ngIf: !ctrl.isEmbedded && !ctrl.isEmptyList() --><div ng-if="!ctrl.isEmbedded &amp;&amp; !ctrl.isEmptyList()" class="List-controls ng-scope">
+  
+          <div class="List-controls-row flex-row-between-start">
+  
+              <!-- ngIf: ctrl.state.name === 'project.automate.tests' --><h2 class="List-title ng-scope" ng-if="ctrl.state.name === 'project.automate.tests'">
+                  Test List
+              </h2><!-- end ngIf: ctrl.state.name === 'project.automate.tests' -->
+              <!-- ngIf: ctrl.state.name === 'project.bugs' -->
+              <!-- ngIf: ctrl.state.name === 'project.autonomous.tests' -->
+  
+              <!-- ngIf: ctrl.hasTestVisualization && ctrl.state.name !== 'project.bugs' -->
+          </div>
+  
+          <!-- ngIf: ctrl.isCurrentView(ctrl.views.LIST) --><div ng-if="ctrl.isCurrentView(ctrl.views.LIST)" class="List-controls-row ng-scope">
+              <div class="List-controls-search">
+                  <!-- Search -->
+                  <div class="flex-row-middle">
+                      <label text-input="" class="TextField__textfield-container___2uNIw TextField__--no-padding___KB6mu ng-scope">
+      <div class="flex-row">
+        
+    <input textfield-input="" class="TextField__textfield___JDg-W ng-pristine ng-valid ng-empty ng-touched" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" type="search" autofocus="autofocus" id="List-search" placeholder="Filter e.g. aaa -bbb label:ccc" ng-model="ctrl.filter">
+  
+        
+    <custom-button-slot></custom-button-slot>
+  
+      </div>
+    </label>
+                      <div class="Icon-separator --grey"></div>
+                      <test-list-filter-button advanced-filtering-is-on="ctrl.advancedFilteringIsOn" advanced-filter-is-open="ctrl.advancedFilterIsOpen" class="ng-isolate-scope">
+      <button test-list-filter-button="" class="advanced-filter-btn" ng-class="{ 'advancedFilterIsOpen': vm.advancedFilterIsOpen }" ng-mouseenter="isHover=true" ng-mouseleave="isHover=false" ng-click="vm.toggleAdvancedFilter()"><i ng-class="{'filter-active':     vm.advancedFilteringIsOn,
+                        'Icon-filter-full':  vm.advancedFilteringIsOn || isHover || vm.advancedFilterIsOpen,
+                        'Icon-filter':     !(vm.advancedFilteringIsOn || isHover || vm.advancedFilterIsOpen)}" tooltip-class="Tooltip--black" uib-tooltip="Advanced filters" tooltip-placement="bottom" tooltip-trigger="'none'" tooltip-is-open="isHover &amp;&amp; !(vm.advancedFilteringIsOn) &amp;&amp; !vm.advancedFilterIsOpen" class="Icon-filter"></i>
+      </button>
+  </test-list-filter-button>
+                  </div>
+                  <test-list-cta class="show-on-small-screens ng-isolate-scope" ng-disabled="ctrl.scenarioService.isInDemoProject()"><!-- ngIf: vm.state === 'project.automate.tests' --><button class="cta ng-scope" ng-transclude="" ng-if="vm.state === 'project.automate.tests'" ng-click="vm.createNewTest($event)"><span class="ng-scope">Create New</span></button><!-- end ngIf: vm.state === 'project.automate.tests' -->
+                          <!-- ngIf: vm.state === 'project.bugs' --></test-list-cta>
+              </div>
+  
+              <test-list-advanced-filter-row class="show-on-small-screens ng-isolate-scope" advanced-filter-is-open="ctrl.advancedFilterIsOpen" selected-shared-steps="ctrl.selectedSharedSteps" selected-labels="ctrl.selectedLabels" on-reset-shared-steps="ctrl.onResetSharedSteps()" on-select-shared-steps="ctrl.onSelectSharedSteps(sharedStep)" on-select-label="ctrl.onSelectLabel(label)" on-reset-labels="ctrl.onResetLabels()" on-select-creator="ctrl.onSelectCreator(creator)" on-reset-creator="ctrl.onResetCreator(creator)" selected-creators="ctrl.selectedCreators" creators="ctrl.creators" show-orphaned-tests-option="ctrl.hasOrphanedTests">
+      <div class="TestListAdvancedFilterRow__advanced-filtering___EnPRV ng-hide" advanced-filtering="" ng-class="{'advanced-filter-is-open': vm.advancedFilterIsOpen}" ng-show="vm.advancedFilterIsOpen">
+          <filterable-list class="select-list ng-isolate-scope" selected-item="vm.selectedLabel" items="vm.labels" select-item="vm.onSelectLabelFilter(item)">
+      <div filterable-list="" class="FilterableList__filterable-list___kVtd5" ng-class="{ 'FilterableList__tall-items___wk1TD': vm.hasItemsWithSecondaryKeys }">
+          <div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-not-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.selectedItem" theme="select2" search-enabled="true" on-select="vm.onSelect($item)"><a class="select2-choice ui-select-match ng-scope" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude="">
+                  <span class="ng-binding ng-scope">Show all labels</span>
+              </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-23" aria-label="Select box" aria-activedescendant="ui-select-choices-row-23-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in vm.items | filter: { name : $select.search}"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-23" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-23" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+      </div>
+  </filterable-list>
+          <div class="Icon-separator --grey"></div>
+          <filterable-list class="select-list ng-isolate-scope" selected-item="vm.selectedSharedStep" items="vm.sharedSteps" select-item="vm.onSelectSharedStepsFilter(item)">
+      <div filterable-list="" class="FilterableList__filterable-list___kVtd5" ng-class="{ 'FilterableList__tall-items___wk1TD': vm.hasItemsWithSecondaryKeys }">
+          <div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-not-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.selectedItem" theme="select2" search-enabled="true" on-select="vm.onSelect($item)"><a class="select2-choice ui-select-match ng-scope" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude="">
+                  <span class="ng-binding ng-scope">Show all shared steps</span>
+              </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-24" aria-label="Select box" aria-activedescendant="ui-select-choices-row-24-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in vm.items | filter: { name : $select.search}"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-24" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-24" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+      </div>
+  </filterable-list>
+          <!-- ngIf: !vm.isDemoProject --><div class="Icon-separator --grey ng-scope" ng-if="!vm.isDemoProject"></div><!-- end ngIf: !vm.isDemoProject -->
+          <!-- ngIf: !vm.isDemoProject --><filterable-list ng-if="!vm.isDemoProject" class="select-list ng-scope ng-isolate-scope" selected-item="vm.selectedCreator" items="vm.creators" select-item="vm.onSelectCreatorFilter(item)">
+      <div filterable-list="" class="FilterableList__filterable-list___kVtd5" ng-class="{ 'FilterableList__tall-items___wk1TD': vm.hasItemsWithSecondaryKeys }">
+          <div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.selectedItem" theme="select2" search-enabled="true" on-select="vm.onSelect($item)"><a class="select2-choice ui-select-match ng-scope select2-default" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen ng-hide" ng-transclude="">
+                  <span class="ng-binding ng-scope"></span>
+              </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-27" aria-label="Select box" aria-activedescendant="ui-select-choices-row-27-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in vm.items | filter: { name : $select.search}"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-27" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-27" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+      </div>
+  </filterable-list><!-- end ngIf: !vm.isDemoProject -->
+      </div>
+  </test-list-advanced-filter-row>
+  
+              <div class="List-controls-box">
+                  <!-- Select all -->
+                  <div>
+                      <input ng-model="ctrl.selectAll" type="checkbox" id="List-selectAll" class="ng-pristine ng-untouched ng-valid ng-empty">
+                      <label for="List-selectAll" class="ng-binding ng-isolate-scope">Select All (9) </label>
+                      <span class="note">
+                          <span class="note-separator">|</span>
+                          <span class="ng-binding">0 chosen</span>
+                          <i class="Icon-info" uib-tooltip="Test results you run directly from the Editor are not shown here" tooltip-placement="top"></i>
+                      </span>
+                  </div>
+  
+                  <div class="Icon-separator"></div>
+  
+                  <div class="List-controls-buttons">
+                      <button ng-click="ctrl.onCloneTest()" ng-disabled="ctrl.isEmptySelection() || ctrl.scenarioService.isInDemoProject()" class="Icon-Clone" title="Clone tests" disabled="disabled">
+                      </button>
+  
+                      <!-- Config -->
+                      <button ng-click="ctrl.onToggleConfigs()" ng-disabled="ctrl.isEmptySelection() || ctrl.scenarioService.isInDemoProject()" class="Icon-config" title="Set configuration for selected tests" disabled="disabled">
+                          <popup-list list="ctrl.configs" modifier="dl" on-select="ctrl.setConfig(item)" is-loading="ctrl.isLoadingConfigs" is-open="ctrl.showConfigs" class="ng-isolate-scope"><!-- ngIf: isOpen -->
+  </popup-list>
+                      </button>
+  
+                      <!-- Labels -->
+                      <label-list disabled="ctrl.isEmptySelection() || ctrl.scenarioService.isInDemoProject()" current-tests-ids="ctrl.getSelectedTestIds()" ng-click="ctrl.onToggleLabels()" title="Edit labels for selected tests" location="test-list" class="ng-isolate-scope"><div class="Scenario-labels">
+      <!-- Label -->
+      <button ng-disabled="disabled" class="Icon-tag--full" ng-click="toggleLabels()" aria-label="Add labels to test" disabled="disabled">
+      </button>
+      <popup-list list="labels" compare-to-list="currentLabels" interactive="true" multiselect="true" action="Label as:" on-select="addTestLabel(item)" on-un-select="removeTestLabel(item)" is-open="labelsOpened" is-loading="isLoadingLabels" class="ng-isolate-scope"><!-- ngIf: isOpen -->
+  </popup-list>
+  </div>
+  </label-list>
+  
+                      <!-- Run selected -->
+                      <!-- ngIf: !ctrl.projectsService.isMobile() --><button sync-click="ctrl.runSelected(event)" ng-if="!ctrl.projectsService.isMobile()" ng-disabled="ctrl.isEmptySelection() || ctrl.scenarioService.isInDemoProject()" class="Icon-play ng-scope ng-isolate-scope" title="Run Selected Tests" disabled="disabled">
+                      </button><!-- end ngIf: !ctrl.projectsService.isMobile() -->
+  
+                      <!-- Delete Selected -->
+                      <button ng-click="ctrl.deleteSelected($event)" ng-disabled="ctrl.isEmptySelection() || ctrl.scenarioService.isInDemoProject()" class="Icon-delete" title="Delete Selected Tests" disabled="disabled">
+                      </button>
+  
+                      <!-- ngIf: ctrl.shouldAllowExportData() --><icon-button ng-if="ctrl.shouldAllowExportData()" tooltip="Export to CSV" ng-click="ctrl.exportData()" icon-class="Icon-export" class="ng-scope ng-isolate-scope">
+    <button type="button" class="IconButton__icon-button___3sq7W" ng-click="vm.onClick($event)" ng-disabled="vm.isDisabled">
+          <i class="Icon-export" uib-tooltip="Export to CSV" tooltip-placement="top" tooltip-class="Tooltip--black" tooltip-append-to-body="true"></i>
+      <ng-transclude></ng-transclude>
+    </button></icon-button><!-- end ngIf: ctrl.shouldAllowExportData() -->
+                  </div>
+  
+                  <!-- Create new test -->
+                  <test-list-cta class="show-on-large-screens ng-isolate-scope"><!-- ngIf: vm.state === 'project.automate.tests' --><button class="cta ng-scope" ng-transclude="" ng-if="vm.state === 'project.automate.tests'" ng-click="vm.createNewTest($event)"><span class="ng-scope">Create New</span></button><!-- end ngIf: vm.state === 'project.automate.tests' -->
+                          <!-- ngIf: vm.state === 'project.bugs' --></test-list-cta>
+              </div>
+          </div><!-- end ngIf: ctrl.isCurrentView(ctrl.views.LIST) -->
+          <!-- ngIf: ctrl.isCurrentView(ctrl.views.LIST) --><test-list-advanced-filter-row ng-if="ctrl.isCurrentView(ctrl.views.LIST)" class="show-on-large-screens ng-scope ng-isolate-scope" advanced-filter-is-open="ctrl.advancedFilterIsOpen" selected-shared-steps="ctrl.selectedSharedSteps" selected-labels="ctrl.selectedLabels" on-reset-shared-steps="ctrl.onResetSharedSteps()" on-select-shared-steps="ctrl.onSelectSharedSteps(sharedStep)" on-select-label="ctrl.onSelectLabel(label)" on-reset-labels="ctrl.onResetLabels()" on-select-creator="ctrl.onSelectCreator(creator)" on-reset-creator="ctrl.onResetCreator(creator)" selected-creators="ctrl.selectedCreators" creators="ctrl.creators" show-orphaned-tests-option="ctrl.hasOrphanedTests">
+      <div class="TestListAdvancedFilterRow__advanced-filtering___EnPRV ng-hide" advanced-filtering="" ng-class="{'advanced-filter-is-open': vm.advancedFilterIsOpen}" ng-show="vm.advancedFilterIsOpen">
+          <filterable-list class="select-list ng-isolate-scope" selected-item="vm.selectedLabel" items="vm.labels" select-item="vm.onSelectLabelFilter(item)">
+      <div filterable-list="" class="FilterableList__filterable-list___kVtd5" ng-class="{ 'FilterableList__tall-items___wk1TD': vm.hasItemsWithSecondaryKeys }">
+          <div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-not-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.selectedItem" theme="select2" search-enabled="true" on-select="vm.onSelect($item)"><a class="select2-choice ui-select-match ng-scope" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude="">
+                  <span class="ng-binding ng-scope">Show all labels</span>
+              </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-25" aria-label="Select box" aria-activedescendant="ui-select-choices-row-25-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in vm.items | filter: { name : $select.search}"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-25" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-25" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+      </div>
+  </filterable-list>
+          <div class="Icon-separator --grey"></div>
+          <filterable-list class="select-list ng-isolate-scope" selected-item="vm.selectedSharedStep" items="vm.sharedSteps" select-item="vm.onSelectSharedStepsFilter(item)">
+      <div filterable-list="" class="FilterableList__filterable-list___kVtd5" ng-class="{ 'FilterableList__tall-items___wk1TD': vm.hasItemsWithSecondaryKeys }">
+          <div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-not-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.selectedItem" theme="select2" search-enabled="true" on-select="vm.onSelect($item)"><a class="select2-choice ui-select-match ng-scope" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude="">
+                  <span class="ng-binding ng-scope">Show all shared steps</span>
+              </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-26" aria-label="Select box" aria-activedescendant="ui-select-choices-row-26-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in vm.items | filter: { name : $select.search}"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-26" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-26" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+      </div>
+  </filterable-list>
+          <!-- ngIf: !vm.isDemoProject --><div class="Icon-separator --grey ng-scope" ng-if="!vm.isDemoProject"></div><!-- end ngIf: !vm.isDemoProject -->
+          <!-- ngIf: !vm.isDemoProject --><filterable-list ng-if="!vm.isDemoProject" class="select-list ng-scope ng-isolate-scope" selected-item="vm.selectedCreator" items="vm.creators" select-item="vm.onSelectCreatorFilter(item)">
+      <div filterable-list="" class="FilterableList__filterable-list___kVtd5" ng-class="{ 'FilterableList__tall-items___wk1TD': vm.hasItemsWithSecondaryKeys }">
+          <div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.selectedItem" theme="select2" search-enabled="true" on-select="vm.onSelect($item)"><a class="select2-choice ui-select-match ng-scope select2-default" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen ng-hide" ng-transclude="">
+                  <span class="ng-binding ng-scope"></span>
+              </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-28" aria-label="Select box" aria-activedescendant="ui-select-choices-row-28-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="item in vm.items | filter: { name : $select.search}"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-28" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: item in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: item in $select.items --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-28" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+      </div>
+  </filterable-list><!-- end ngIf: !vm.isDemoProject -->
+      </div>
+  </test-list-advanced-filter-row><!-- end ngIf: ctrl.isCurrentView(ctrl.views.LIST) -->
+      </div><!-- end ngIf: !ctrl.isEmbedded && !ctrl.isEmptyList() -->
+  
+      <!-- ngIf: !ctrl.isEmbedded && ctrl.isCurrentView(ctrl.views.CHART) -->
+  
+      <!-- ngIf: ctrl.isCurrentView(ctrl.views.LIST) && ctrl.testList.length --><div id="list-body" vscroll="" ng-class="{'isLoading': ctrl.loadingSharedSteps}" ng-if="ctrl.isCurrentView(ctrl.views.LIST) &amp;&amp; ctrl.testList.length" class="List-items ng-scope" data-loading-text="Just One Sec...">
+  
+          <ul vscroll-port-y="ctrl.vscrollContext" class="ng-scope" tabindex="0" style="outline: none; overflow-anchor: none; padding-top: 0px; padding-bottom: 0px;">
+              <!-- Test List -->
+              <!-- ngRepeat: test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index --><li class="ListItem ng-scope" vscroll-row="0" ng-repeat="test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index">
+  
+                  <!-- Checkbox-->
+                  <div class="checkbox">
+                      <input type="checkbox" ng-model="test.isSelected" class="ng-pristine ng-untouched ng-valid ng-empty">
+                  </div>
+  
+                  <div class="ListItem-info">
+                      <!-- Name-->
+                      <a ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" class="ListItem-name ng-binding" title="Login TDK1" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/sINzP49kAR">
+                          Login TDK1
+                      </a>
+  
+                      <!-- Description-->
+                      <span class="ListItem-description ng-binding" title="" ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/sINzP49kAR">
+                        
+                        </span>
+                  </div>
+  
+                  <!-- Labels-->
+                  <div class="ListItem-labels">
+                      <tag-lens tags="test.labels" theme="gray" auto-grow="true" on-tag-remove="!ctrl.scenarioService.isInDemoProject() &amp;&amp; ctrl.removeLabelFromTest($event, test, tag)" on-tag-click="ctrl.filter = tag" class="ng-isolate-scope TagLens__--gray___2EqXa">
+  <!-- ngIf: vm.hasTags -->
+  </tag-lens>
+                  </div>
+  
+                  <div class="ListItem-buttons">
+                      <!-- Separator-->
+                      <!-- ngIf: test.latestTestResult && test.labels.length -->
+  
+                      <!-- Result-->
+                      <span role="button" ng-click="ctrl.goToTestResult(test, $event)" ng-class="'TestList-result-' + test.normalizedResult" title="Last test result - Passed" class="ng-binding TestList-result-Passed">Passed</span>
+  
+                      <!-- ngIf: test.latestTestResult --><span ng-if="test.latestTestResult" class="TestList-result-icons TestList-show-on-row-hover ng-scope">
+                          <a ui-sref="project.runs.tests({testId: test.id, period: 'month'})" class="Icon-history" uib-tooltip="Test history" tooltip-class="Tooltip--black" tooltip-placement="top" href="#/project/zVMJIuYWllNybCyUcdQI/runs/tests?period=month&amp;testId=sINzP49kAR">
+                          </a>
+                      </span><!-- end ngIf: test.latestTestResult -->
+                  </div>
+              </li><!-- end ngRepeat: test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index --><li class="ListItem ng-scope" vscroll-row="1" ng-repeat="test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index">
+  
+                  <!-- Checkbox-->
+                  <div class="checkbox">
+                      <input type="checkbox" ng-model="test.isSelected" class="ng-pristine ng-untouched ng-valid ng-empty">
+                  </div>
+  
+                  <div class="ListItem-info">
+                      <!-- Name-->
+                      <a ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" class="ListItem-name ng-binding" title="Simple text validation (from code)" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/b3ROidvvSA">
+                          Simple text validation (from code)
+                      </a>
+  
+                      <!-- Description-->
+                      <span class="ListItem-description ng-binding" title="" ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/b3ROidvvSA">
+                        
+                        </span>
+                  </div>
+  
+                  <!-- Labels-->
+                  <div class="ListItem-labels">
+                      <tag-lens tags="test.labels" theme="gray" auto-grow="true" on-tag-remove="!ctrl.scenarioService.isInDemoProject() &amp;&amp; ctrl.removeLabelFromTest($event, test, tag)" on-tag-click="ctrl.filter = tag" class="ng-isolate-scope TagLens__--gray___2EqXa">
+  <!-- ngIf: vm.hasTags -->
+  </tag-lens>
+                  </div>
+  
+                  <div class="ListItem-buttons">
+                      <!-- Separator-->
+                      <!-- ngIf: test.latestTestResult && test.labels.length -->
+  
+                      <!-- Result-->
+                      <span role="button" ng-click="ctrl.goToTestResult(test, $event)" ng-class="'TestList-result-' + test.normalizedResult" title="Last test result - Passed" class="ng-binding TestList-result-Passed">Passed</span>
+  
+                      <!-- ngIf: test.latestTestResult --><span ng-if="test.latestTestResult" class="TestList-result-icons TestList-show-on-row-hover ng-scope">
+                          <a ui-sref="project.runs.tests({testId: test.id, period: 'month'})" class="Icon-history" uib-tooltip="Test history" tooltip-class="Tooltip--black" tooltip-placement="top" href="#/project/zVMJIuYWllNybCyUcdQI/runs/tests?period=month&amp;testId=b3ROidvvSA">
+                          </a>
+                      </span><!-- end ngIf: test.latestTestResult -->
+                  </div>
+              </li><!-- end ngRepeat: test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index --><li class="ListItem ng-scope" vscroll-row="2" ng-repeat="test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index">
+  
+                  <!-- Checkbox-->
+                  <div class="checkbox">
+                      <input type="checkbox" ng-model="test.isSelected" class="ng-pristine ng-untouched ng-valid ng-empty">
+                  </div>
+  
+                  <div class="ListItem-info">
+                      <!-- Name-->
+                      <a ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" class="ListItem-name ng-binding" title="Simple text validation - tdk (liron)" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/EorI2ETcTn">
+                          Simple text validation - tdk (liron)
+                      </a>
+  
+                      <!-- Description-->
+                      <span class="ListItem-description ng-binding" title="" ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/EorI2ETcTn">
+                        
+                        </span>
+                  </div>
+  
+                  <!-- Labels-->
+                  <div class="ListItem-labels">
+                      <tag-lens tags="test.labels" theme="gray" auto-grow="true" on-tag-remove="!ctrl.scenarioService.isInDemoProject() &amp;&amp; ctrl.removeLabelFromTest($event, test, tag)" on-tag-click="ctrl.filter = tag" class="ng-isolate-scope TagLens__--gray___2EqXa">
+  <!-- ngIf: vm.hasTags -->
+  </tag-lens>
+                  </div>
+  
+                  <div class="ListItem-buttons">
+                      <!-- Separator-->
+                      <!-- ngIf: test.latestTestResult && test.labels.length -->
+  
+                      <!-- Result-->
+                      <span role="button" ng-click="ctrl.goToTestResult(test, $event)" ng-class="'TestList-result-' + test.normalizedResult" title="Last test result - None" class="ng-binding TestList-result-None">None</span>
+  
+                      <!-- ngIf: test.latestTestResult -->
+                  </div>
+              </li><!-- end ngRepeat: test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index --><li class="ListItem ng-scope" vscroll-row="3" ng-repeat="test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index">
+  
+                  <!-- Checkbox-->
+                  <div class="checkbox">
+                      <input type="checkbox" ng-model="test.isSelected" class="ng-pristine ng-untouched ng-valid ng-empty">
+                  </div>
+  
+                  <div class="ListItem-info">
+                      <!-- Name-->
+                      <a ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" class="ListItem-name ng-binding" title="Ujet example" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/SY4VC5jl2j">
+                          Ujet example
+                      </a>
+  
+                      <!-- Description-->
+                      <span class="ListItem-description ng-binding" title="" ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/SY4VC5jl2j">
+                        
+                        </span>
+                  </div>
+  
+                  <!-- Labels-->
+                  <div class="ListItem-labels">
+                      <tag-lens tags="test.labels" theme="gray" auto-grow="true" on-tag-remove="!ctrl.scenarioService.isInDemoProject() &amp;&amp; ctrl.removeLabelFromTest($event, test, tag)" on-tag-click="ctrl.filter = tag" class="ng-isolate-scope TagLens__--gray___2EqXa">
+  <!-- ngIf: vm.hasTags -->
+  </tag-lens>
+                  </div>
+  
+                  <div class="ListItem-buttons">
+                      <!-- Separator-->
+                      <!-- ngIf: test.latestTestResult && test.labels.length -->
+  
+                      <!-- Result-->
+                      <span role="button" ng-click="ctrl.goToTestResult(test, $event)" ng-class="'TestList-result-' + test.normalizedResult" title="Last test result - None" class="ng-binding TestList-result-None">None</span>
+  
+                      <!-- ngIf: test.latestTestResult -->
+                  </div>
+              </li><!-- end ngRepeat: test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index --><li class="ListItem ng-scope" vscroll-row="4" ng-repeat="test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index">
+  
+                  <!-- Checkbox-->
+                  <div class="checkbox">
+                      <input type="checkbox" ng-model="test.isSelected" class="ng-pristine ng-untouched ng-valid ng-empty">
+                  </div>
+  
+                  <div class="ListItem-info">
+                      <!-- Name-->
+                      <a ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" class="ListItem-name ng-binding" title="Ujet example2" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/gbaBlqXlT5">
+                          Ujet example2
+                      </a>
+  
+                      <!-- Description-->
+                      <span class="ListItem-description ng-binding" title="" ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/gbaBlqXlT5">
+                        
+                        </span>
+                  </div>
+  
+                  <!-- Labels-->
+                  <div class="ListItem-labels">
+                      <tag-lens tags="test.labels" theme="gray" auto-grow="true" on-tag-remove="!ctrl.scenarioService.isInDemoProject() &amp;&amp; ctrl.removeLabelFromTest($event, test, tag)" on-tag-click="ctrl.filter = tag" class="ng-isolate-scope TagLens__--gray___2EqXa">
+  <!-- ngIf: vm.hasTags -->
+  </tag-lens>
+                  </div>
+  
+                  <div class="ListItem-buttons">
+                      <!-- Separator-->
+                      <!-- ngIf: test.latestTestResult && test.labels.length -->
+  
+                      <!-- Result-->
+                      <span role="button" ng-click="ctrl.goToTestResult(test, $event)" ng-class="'TestList-result-' + test.normalizedResult" title="Last test result - Passed" class="ng-binding TestList-result-Passed">Passed</span>
+  
+                      <!-- ngIf: test.latestTestResult --><span ng-if="test.latestTestResult" class="TestList-result-icons TestList-show-on-row-hover ng-scope">
+                          <a ui-sref="project.runs.tests({testId: test.id, period: 'month'})" class="Icon-history" uib-tooltip="Test history" tooltip-class="Tooltip--black" tooltip-placement="top" href="#/project/zVMJIuYWllNybCyUcdQI/runs/tests?period=month&amp;testId=gbaBlqXlT5">
+                          </a>
+                      </span><!-- end ngIf: test.latestTestResult -->
+                  </div>
+              </li><!-- end ngRepeat: test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index --><li class="ListItem ng-scope" vscroll-row="5" ng-repeat="test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index">
+  
+                  <!-- Checkbox-->
+                  <div class="checkbox">
+                      <input type="checkbox" ng-model="test.isSelected" class="ng-pristine ng-untouched ng-valid ng-empty">
+                  </div>
+  
+                  <div class="ListItem-info">
+                      <!-- Name-->
+                      <a ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" class="ListItem-name ng-binding" title="Validate element not visible - Z index - from code" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/hwKOe3ztHA">
+                          Validate element not visible - Z index - from code
+                      </a>
+  
+                      <!-- Description-->
+                      <span class="ListItem-description ng-binding" title="" ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/hwKOe3ztHA">
+                        
+                        </span>
+                  </div>
+  
+                  <!-- Labels-->
+                  <div class="ListItem-labels">
+                      <tag-lens tags="test.labels" theme="gray" auto-grow="true" on-tag-remove="!ctrl.scenarioService.isInDemoProject() &amp;&amp; ctrl.removeLabelFromTest($event, test, tag)" on-tag-click="ctrl.filter = tag" class="ng-isolate-scope TagLens__--gray___2EqXa">
+  <!-- ngIf: vm.hasTags -->
+  </tag-lens>
+                  </div>
+  
+                  <div class="ListItem-buttons">
+                      <!-- Separator-->
+                      <!-- ngIf: test.latestTestResult && test.labels.length -->
+  
+                      <!-- Result-->
+                      <span role="button" ng-click="ctrl.goToTestResult(test, $event)" ng-class="'TestList-result-' + test.normalizedResult" title="Last test result - None" class="ng-binding TestList-result-None">None</span>
+  
+                      <!-- ngIf: test.latestTestResult -->
+                  </div>
+              </li><!-- end ngRepeat: test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index --><li class="ListItem ng-scope" vscroll-row="6" ng-repeat="test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index">
+  
+                  <!-- Checkbox-->
+                  <div class="checkbox">
+                      <input type="checkbox" ng-model="test.isSelected" class="ng-pristine ng-untouched ng-valid ng-empty">
+                  </div>
+  
+                  <div class="ListItem-info">
+                      <!-- Name-->
+                      <a ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" class="ListItem-name ng-binding" title="asos_test" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/nciQXkdT7f">
+                          asos_test
+                      </a>
+  
+                      <!-- Description-->
+                      <span class="ListItem-description ng-binding" title="" ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/nciQXkdT7f">
+                        
+                        </span>
+                  </div>
+  
+                  <!-- Labels-->
+                  <div class="ListItem-labels">
+                      <tag-lens tags="test.labels" theme="gray" auto-grow="true" on-tag-remove="!ctrl.scenarioService.isInDemoProject() &amp;&amp; ctrl.removeLabelFromTest($event, test, tag)" on-tag-click="ctrl.filter = tag" class="ng-isolate-scope TagLens__--gray___2EqXa">
+  <!-- ngIf: vm.hasTags -->
+  </tag-lens>
+                  </div>
+  
+                  <div class="ListItem-buttons">
+                      <!-- Separator-->
+                      <!-- ngIf: test.latestTestResult && test.labels.length -->
+  
+                      <!-- Result-->
+                      <span role="button" ng-click="ctrl.goToTestResult(test, $event)" ng-class="'TestList-result-' + test.normalizedResult" title="Last test result - Failed" class="ng-binding TestList-result-Failed">Failed</span>
+  
+                      <!-- ngIf: test.latestTestResult --><span ng-if="test.latestTestResult" class="TestList-result-icons TestList-show-on-row-hover ng-scope">
+                          <a ui-sref="project.runs.tests({testId: test.id, period: 'month'})" class="Icon-history" uib-tooltip="Test history" tooltip-class="Tooltip--black" tooltip-placement="top" href="#/project/zVMJIuYWllNybCyUcdQI/runs/tests?period=month&amp;testId=nciQXkdT7f">
+                          </a>
+                      </span><!-- end ngIf: test.latestTestResult -->
+                  </div>
+              </li><!-- end ngRepeat: test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index --><li class="ListItem ng-scope" vscroll-row="7" ng-repeat="test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index">
+  
+                  <!-- Checkbox-->
+                  <div class="checkbox">
+                      <input type="checkbox" ng-model="test.isSelected" class="ng-pristine ng-untouched ng-valid ng-empty">
+                  </div>
+  
+                  <div class="ListItem-info">
+                      <!-- Name-->
+                      <a ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" class="ListItem-name ng-binding" title="t2" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/Bs0m7SIB7Y">
+                          t2
+                      </a>
+  
+                      <!-- Description-->
+                      <span class="ListItem-description ng-binding" title="" ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/Bs0m7SIB7Y">
+                        
+                        </span>
+                  </div>
+  
+                  <!-- Labels-->
+                  <div class="ListItem-labels">
+                      <tag-lens tags="test.labels" theme="gray" auto-grow="true" on-tag-remove="!ctrl.scenarioService.isInDemoProject() &amp;&amp; ctrl.removeLabelFromTest($event, test, tag)" on-tag-click="ctrl.filter = tag" class="ng-isolate-scope TagLens__--gray___2EqXa">
+  <!-- ngIf: vm.hasTags -->
+  </tag-lens>
+                  </div>
+  
+                  <div class="ListItem-buttons">
+                      <!-- Separator-->
+                      <!-- ngIf: test.latestTestResult && test.labels.length -->
+  
+                      <!-- Result-->
+                      <span role="button" ng-click="ctrl.goToTestResult(test, $event)" ng-class="'TestList-result-' + test.normalizedResult" title="Last test result - Passed" class="ng-binding TestList-result-Passed">Passed</span>
+  
+                      <!-- ngIf: test.latestTestResult --><span ng-if="test.latestTestResult" class="TestList-result-icons TestList-show-on-row-hover ng-scope">
+                          <a ui-sref="project.runs.tests({testId: test.id, period: 'month'})" class="Icon-history" uib-tooltip="Test history" tooltip-class="Tooltip--black" tooltip-placement="top" href="#/project/zVMJIuYWllNybCyUcdQI/runs/tests?period=month&amp;testId=Bs0m7SIB7Y">
+                          </a>
+                      </span><!-- end ngIf: test.latestTestResult -->
+                  </div>
+              </li><!-- end ngRepeat: test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index --><li class="ListItem ng-scope" vscroll-row="8" ng-repeat="test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index">
+  
+                  <!-- Checkbox-->
+                  <div class="checkbox">
+                      <input type="checkbox" ng-model="test.isSelected" class="ng-pristine ng-untouched ng-valid ng-empty">
+                  </div>
+  
+                  <div class="ListItem-info">
+                      <!-- Name-->
+                      <a ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" class="ListItem-name ng-binding" title="untitled test" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/G8XKbldpxk">
+                          untitled test
+                      </a>
+  
+                      <!-- Description-->
+                      <span class="ListItem-description ng-binding" title="" ui-sref="project.test({testId: test.id, branch: ctrl.branchesService.getCurrentBranch()})" ng-click="ctrl.loadTest(test, $event)" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/G8XKbldpxk">
+                        
+                        </span>
+                  </div>
+  
+                  <!-- Labels-->
+                  <div class="ListItem-labels">
+                      <tag-lens tags="test.labels" theme="gray" auto-grow="true" on-tag-remove="!ctrl.scenarioService.isInDemoProject() &amp;&amp; ctrl.removeLabelFromTest($event, test, tag)" on-tag-click="ctrl.filter = tag" class="ng-isolate-scope TagLens__--gray___2EqXa">
+  <!-- ngIf: vm.hasTags -->
+  </tag-lens>
+                  </div>
+  
+                  <div class="ListItem-buttons">
+                      <!-- Separator-->
+                      <!-- ngIf: test.latestTestResult && test.labels.length -->
+  
+                      <!-- Result-->
+                      <span role="button" ng-click="ctrl.goToTestResult(test, $event)" ng-class="'TestList-result-' + test.normalizedResult" title="Last test result - Passed" class="ng-binding TestList-result-Passed">Passed</span>
+  
+                      <!-- ngIf: test.latestTestResult --><span ng-if="test.latestTestResult" class="TestList-result-icons TestList-show-on-row-hover ng-scope">
+                          <a ui-sref="project.runs.tests({testId: test.id, period: 'month'})" class="Icon-history" uib-tooltip="Test history" tooltip-class="Tooltip--black" tooltip-placement="top" href="#/project/zVMJIuYWllNybCyUcdQI/runs/tests?period=month&amp;testId=G8XKbldpxk">
+                          </a>
+                      </span><!-- end ngIf: test.latestTestResult -->
+                  </div>
+              </li><!-- end ngRepeat: test in ctrl.testList | vscroll: ctrl.vscrollContext track by $index -->
+          </ul>
+      </div><!-- end ngIf: ctrl.isCurrentView(ctrl.views.LIST) && ctrl.testList.length -->
+  
+      <!-- ngIf: !ctrl.testList.length && !ctrl.isEmptyList() -->
+  </div>
+  </ui-view>
+  </div>
+  </automate-container></ui-view></ui-view>
+        </main>
+      </div>
+    </div>
+  
+    <!-- Notifications -->
+    <notification-display name="main:display" ng-class="{'show-notification': notificationActive}" class="ng-scope"><div class="notification-wrap info" ng-class="type" title="Test Completed Successfully">
+    <button class="close-btn" ng-click="closeNotification()">
+      <i class="Icon-close"></i>
+    </button>
+    <div class="massage">
+      <span class="ng-binding">Test Completed Successfully</span>
+    </div>
+  </div>
+  </notification-display>
+    <wait-notification-display name="wait:display" ng-class="{'show-notification': notificationActive}" class="ng-scope"><div class="close-btn" ng-click="closeNotification()"></div>
+  
+  <!-- ngIf: type==='normal' -->
+  
+  <!-- ngIf: type==='select-element' -->
+  
+  </wait-notification-display>
+    <div id="react-root"></div>
+  <script type="text/javascript" src="/assets/js/bundle_f2fa4e1778756e1dc581.js?f2fa4e1778756e1dc581"></script>
+  
+  <iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important;" aria-hidden="true" tabindex="-1" title="Intercom" data-bootstrap-modal-aria-hidden-count="1"></iframe><div id="intercom-container" class="intercom-namespace"><style>html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body,html.intercom-modal-open,#intercom-container-body{overflow:hidden !important;}html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body{position:static !important;}html.intercom-mobile-messenger-active > body{height:0 !important;margin:0 !important;}iframe#intercom-frame{position:absolute !important;opacity:0 !important;width:1px !important;height:1px !important;top:0 !important;left:0 !important;border:none !important;display:block !important;z-index:-1 !important;}</style><div class="intercom-app" aria-live="polite"><div id="intercom-modal-container"></div></div></div><div id="intercom-css-container"><style data-emotion="intercom-global"></style><style data-emotion="intercom"></style></div><iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="about:blank" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;" data-bootstrap-modal-aria-hidden-count="1"></iframe><iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="about:blank" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;" data-bootstrap-modal-aria-hidden-count="1"></iframe><div><iframe title="Opens a widget where you can find more information" id="launcher" tabindex="0" class="zEWidget-launcher zEWidget-launcher--active" style="border: none; background: transparent; z-index: 999998; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 1; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px; width: 139px;width: 139px;width: 139px;width: 139px;"></iframe></div><div><iframe title="Find more information here" id="webWidget" tabindex="-1" class="zEWidget-webWidget " style="border: none; background: transparent; z-index: 999999; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px; visibility: hidden;"></iframe></div><div><iframe title="Opens a widget where you can find more information" id="launcher" tabindex="0" class="zEWidget-launcher zEWidget-launcher--active" style="border: none; background: transparent; z-index: 999998; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 1; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px; width: 139px;width: 139px;width: 139px;width: 139px;"></iframe></div><div><iframe title="Find more information here" id="webWidget" tabindex="-1" class="zEWidget-webWidget " style="border: none; background: transparent; z-index: 999999; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px; visibility: hidden;"></iframe></div></body>

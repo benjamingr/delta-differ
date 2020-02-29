@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "target": "ES5", // support IE11
+        "strict": true
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "e2e",
+    "version": "0.1.0",
+    "description": "https://help.testim.io/docs/",
+    "dependencies": {
+        "testim": "latest",
+        "@testim/testim-cli": "latest",
+        "@types/node": "12.7.1",
+        "@types/chai": "4.2.2",
+        "chai": "4.2.0",
+        "ts-loader": "6.0.4",
+        "typescript": "3.5.3",
+        "cross-env": "5.2.1"
+    },
+    "scripts": {
+        "start": "cross-env NODE_OPTIONS=--max-old-space-size=8196 testim --webpackConfig='../webpack.config.js' run \"./tests/**/*.test.ts\" --require-credentials --headless",
+        "test": "npm start",
+        "dev-test": "cross-env NODE_OPTIONS=--max-old-space-size=8196 testim --webpackConfig='../webpack.config.js' run \"./tests/**/*.test.ts\" --require-credentials --reporters=chrome,console",
+        "debug": "cross-env NODE_OPTIONS=--max-old-space-size=8196 testim --inspect 9229 --webpackConfig='../webpack.config.js' run \"./tests/**/*.test.ts\" --require-credentials",
+        "debug-file": "cross-env NODE_OPTIONS=--max-old-space-size=8196 testim --inspect 9229 --webpackConfig='../webpack.config.js' --require-credentials run",
+        "debug-examples": "cross-env NODE_OPTIONS=--max-old-space-size=8196 testim --inspect 9229 --webpackConfig='../webpack.config.js' run \"./tests/examples/*.test.ts\" --require-credentials",
+        "headless": "cross-env NODE_OPTIONS=--max-old-space-size=8196 testim --inspect 9229 --webpackConfig='../webpack.config.js' run \"./tests/**/*.test.ts\" --require-credentials --headless",
+        "ci": "cross-env NODE_OPTIONS=--max-old-space-size=8196 testim --webpackConfig='../webpack.config.js' run \"./tests/**/*.test.ts\" --grid testim-grid"
+    }
+}

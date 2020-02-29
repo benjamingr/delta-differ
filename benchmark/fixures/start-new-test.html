@@ -1,0 +1,1314 @@
+<body class="App ng-scope modal-open" overflow-container=""><div uib-modal-window="modal-window" class="modal fade ng-scope ng-isolate-scope in" role="dialog" size="dialogTestUrl" index="0" animate="animate" ng-style="{'z-index': 3010 + $$topModalIndex*10, display: 'block'}" tabindex="-1" uib-modal-animation-class="fade" modal-in-class="in" modal-animation="true" style="z-index: 3010; display: block;"><div class="modal-dialog modal-dialogTestUrl"><div class="modal-content" uib-modal-transclude=""><form ng-submit="vm.submit($event)" class="ng-pristine ng-valid ng-scope">
+    <div class="new-Modal">
+        <header class="Modal-header">
+            <h3 class="Modal-title ng-binding">
+                START A NEW TEST
+            </h3>
+            <div class="Modal-close" ng-click="close($event)">
+                <span role="button" class="Icon-close">
+                    <span>Close</span>
+                </span>
+            </div>
+        </header>
+        <div class="Modal-body">
+            <div class="Modal-section">
+                <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label --><field-label ng-if="!tfvm.hasCustomLabel &amp;&amp; tfvm.label" class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-binding ng-scope">
+    Your app URL
+  </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label><!-- end ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield___JDg-W ng-pristine ng-valid ng-empty ng-touched" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" type="text" label="'Your app URL'" autofocus="autofocus" ng-model="vm.baseUrl" placeholder="https://yourapp.com" ng-change="vm.onBaseUrlChange()">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+            </div>
+            <div class="Modal-section remember-config" ng-show="vm.showRememberUrl">
+                <input type="checkbox" ng-model="vm.saveTestUrlAsDefault" class="ng-pristine ng-untouched ng-valid ng-empty">
+                <span>Remember my decision (for this project)</span>
+                <i class="Icon-info" uib-tooltip="You can always change this default in the settings (or override the URL only for a specific test by navigating to a different URL)." tooltip-placement="top" tooltip-class="Tooltip--black" tooltip-append-to-body="true">
+                </i>
+            </div>
+        </div>
+        <!-- ngIf: vm.showRememberUrl --><footer class="Modal-footer ng-scope" ng-if="vm.showRememberUrl">
+            <button class="cta" ng-transclude="" ng-click="vm.submit($event)" ng-disabled="vm.testUrlIsInvalid" disabled="disabled"><span class="ng-scope">Create Test</span></button>
+        </footer><!-- end ngIf: vm.showRememberUrl -->
+        <!-- ngIf: !vm.showRememberUrl -->
+    </div>
+</form>
+</div></div>
+</div><div uib-modal-backdrop="modal-backdrop" class="modal-backdrop dialogTestUrl fade ng-scope in" ng-style="{'z-index': 3000 + (index &amp;&amp; 1 || 0) + index*10}" uib-modal-animation-class="fade" modal-in-class="in" modal-animation="true" data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true" style="z-index: 3000;"></div>
+  <div id="app-layout" ng-class="{
+    'App-banner-displayed': showAppBanner(),
+    'page-banner-displayed': isPageBannerDisplayed()
+  }" data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true">
+    <!-- ngIf: showSideBarAndHeader() && authenticated() --><sidebar class="App-sidebar ng-scope authenticated" ng-if="showSideBarAndHeader() &amp;&amp; authenticated()" ng-class="{'authenticated' : authenticated() || isStyleguide() || !isCodePage() }"><nav class="App-nav">
+    <!-- ngIf: !scenarioService.isCurrentTest -->
+    <!-- ngIf: scenarioService.isCurrentTest --><app-nav-item ng-if="scenarioService.isCurrentTest" icon="edit" label="Editor" ng-class="{'is-recording': scenarioService.isRecording, 'isActive': $state.current.name.indexOf('project.test') >= 0}" sref="project.test(vm.scenarioService.getTestParams())" class="ng-scope ng-isolate-scope isActive">
+    <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.test(vm.scenarioService.getTestParams())" ui-sref-active="isActive" href="#/project/zVMJIuYWllNybCyUcdQI/branch/master/test/OsgTX4NnPv">
+            <span class="icon-background f-col-center Editor">
+                <i class="Icon-edit"></i>
+            </span>
+            <span class="IconTooltip ng-binding">Editor</span>
+    </a><!-- end ngIf: !vm.hasCustomContent -->
+    <!-- ngIf: vm.hasCustomContent -->
+</app-nav-item><!-- end ngIf: scenarioService.isCurrentTest -->
+
+    <div class="separator"></div>
+
+    <app-nav-item icon="clickim" label="Automate" sref="project.automate" class="ng-isolate-scope">
+    <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.automate" ui-sref-active="isActive" href="#/project//branch//automate">
+            <span class="icon-background f-col-center Automate">
+                <i class="Icon-clickim"></i>
+            </span>
+            <span class="IconTooltip ng-binding">Automate</span>
+    </a><!-- end ngIf: !vm.hasCustomContent -->
+    <!-- ngIf: vm.hasCustomContent -->
+</app-nav-item>
+    <!-- ngIf: userService.isAdmin() --><app-nav-item ng-if="userService.isAdmin()" icon="bugim" label="Capture" sref="project.bugs" class="ng-scope ng-isolate-scope">
+    <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.bugs" ui-sref-active="isActive" href="#/project//branch//bugs">
+            <span class="icon-background f-col-center Capture">
+                <i class="Icon-bugim"></i>
+            </span>
+            <span class="IconTooltip ng-binding">Capture</span>
+    </a><!-- end ngIf: !vm.hasCustomContent -->
+    <!-- ngIf: vm.hasCustomContent -->
+</app-nav-item><!-- end ngIf: userService.isAdmin() -->
+    <!-- ngIf: hasTestVisualization() -->
+    <app-nav-item icon="batch" label="Runs" sref="project.runs" class="ng-isolate-scope">
+    <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.runs" ui-sref-active="isActive" href="#/project//runs">
+            <span class="icon-background f-col-center Runs">
+                <i class="Icon-batch"></i>
+            </span>
+            <span class="IconTooltip ng-binding">Runs</span>
+    </a><!-- end ngIf: !vm.hasCustomContent -->
+    <!-- ngIf: vm.hasCustomContent -->
+</app-nav-item>
+
+    <div class="separator"></div>
+
+    <!-- ngIf: !scenarioService.isInDemoProject() --><app-nav-item ng-if="!scenarioService.isInDemoProject()" icon="cog" label="Settings" ng-class="{'isActive': $state.current.name.indexOf('project.settings') >= 0}" sref="project.settings" class="ng-scope ng-isolate-scope">
+    <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.settings" ui-sref-active="isActive" href="#/project//settings">
+            <span class="icon-background f-col-center Settings">
+                <i class="Icon-cog"></i>
+            </span>
+            <span class="IconTooltip ng-binding">Settings</span>
+    </a><!-- end ngIf: !vm.hasCustomContent -->
+    <!-- ngIf: vm.hasCustomContent -->
+</app-nav-item><!-- end ngIf: !scenarioService.isInDemoProject() -->
+    <!-- ngIf: !scenarioService.isInDemoProject() --><app-nav-item ng-if="!scenarioService.isInDemoProject()" icon="users" label="Users" sref="project.users" class="ng-scope ng-isolate-scope">
+    <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.users" ui-sref-active="isActive" href="#/project//users">
+            <span class="icon-background f-col-center Users">
+                <i class="Icon-users"></i>
+            </span>
+            <span class="IconTooltip ng-binding">Users</span>
+    </a><!-- end ngIf: !vm.hasCustomContent -->
+    <!-- ngIf: vm.hasCustomContent -->
+</app-nav-item><!-- end ngIf: !scenarioService.isInDemoProject() -->
+    <!-- ngIf: userService.isAdmin() --><app-nav-item ng-if="userService.isAdmin()" icon="admin" label="Admin" sref="project.admin" class="ng-scope ng-isolate-scope">
+    <!-- ngIf: !vm.hasCustomContent --><a ng-if="!vm.hasCustomContent" class="App-nav-item ng-scope" ui-sref="project.admin" ui-sref-active="isActive" href="#/project//admin">
+            <span class="icon-background f-col-center Admin">
+                <i class="Icon-admin"></i>
+            </span>
+            <span class="IconTooltip ng-binding">Admin</span>
+    </a><!-- end ngIf: !vm.hasCustomContent -->
+    <!-- ngIf: vm.hasCustomContent -->
+</app-nav-item><!-- end ngIf: userService.isAdmin() -->
+
+    <!-- ngIf: shouldShowStyleguide -->
+
+    <!-- ngIf: shouldShowStyleguide -->
+
+    <mobile-connection-indicator class="ng-isolate-scope">
+<!-- ngIf: vm.projectsService.isIos() && vm.featureFlagsService.flags.showMobileRoomIndicator.isEnabled() --></mobile-connection-indicator>
+</nav>
+</sidebar><!-- end ngIf: showSideBarAndHeader() && authenticated() -->
+    <!-- ngIf: !authenticated() && !isStyleguide() && !isCodePage() -->
+    <!-- ngIf: authenticated() && !isStyleguide() && !isCodePage() --><div class="App-header ng-scope authenticated" ng-if="authenticated() &amp;&amp; !isStyleguide() &amp;&amp; !isCodePage()" ng-class="{'authenticated' : authenticated()}">
+      <!-- ngIf: showSideBarAndHeader() --><default-header ng-if="showSideBarAndHeader()" class="ng-scope ng-isolate-scope">
+    <app-header class="DefaultHeader__default-header___2pYA4 ng-isolate-scope">
+<div class="AppHeader__app-header___SUcRV">
+    <company-logo class="ng-isolate-scope">
+    <div class="CompanyLogo__header-company___1szSF" mobx-autorun="">
+        <a ui-sref="company.projects({companyId: vm.companiesService.getCompanyId()})" class="CompanyLogo__company-logo___2qUou ng-binding" href="#/company/mLVRPA2fJX/projects">T</a>
+        <company-select class="ng-isolate-scope">
+<div company-select="">
+    <!-- ngIf: vm.showDropdown --><div ng-mouseleave="vm.closeDropdown()" ng-if="vm.showDropdown" ng-class="{'CompanySelect__dropdown-opened___-Ro6C': vm.isDropdownOpened}" class="CompanySelect__companies-list-arrow___TPIVB ng-scope">
+        <i ng-mouseenter="vm.openDropdown()" class="Icon-caret-down--white"></i>
+    </div><!-- end ngIf: vm.showDropdown -->
+    
+    <div class="CompanySelect__companies-list-menu___2R30C ng-hide" ng-show="vm.isDropdownOpened" ng-mouseenter="vm.openDropdown()" ng-mouseleave="vm.closeDropdown()">
+        <!-- ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            #
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            *
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            *.*
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            *.*
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            ,fdkjs
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id --><div ng-repeat="company in vm.companies track by company.id" class="CompanySelect__company-list-item___1qYEv ng-binding ng-scope" ng-click="vm.onSelectCompany(company)">
+            -
+        </div><!-- end ngRepeat: company in vm.companies track by company.id -->
+    </div>
+</div>
+</company-select>
+    </div>
+</company-logo>
+
+    <div class="AppHeader__app-header-content___1nAbY" ng-transclude="">
+        <div class="DefaultHeader__default-header-content___2xsIN ng-scope">
+            <app-header-left class="ng-isolate-scope">
+<div class="AppHeaderLeft__app-header-left___1YSG5">
+    <div ng-transclude="">
+                <project-list class="select-list ng-scope ng-isolate-scope"><div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-not-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="model.selected" theme="select2" search-enabled="true" on-select="selectProject($item)"><a class="select2-choice ui-select-match ng-scope" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude="">
+        <span class="ng-binding ng-scope">admin_default_project<!-- ngIf: $select.selected.isMobileWeb --></span>
+    </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-0" aria-label="Select box" aria-activedescendant="ui-select-choices-row-0-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search" style="width: 10px;"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="project in projects | filter: { name : $select.search} | limitTo: 20"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-0" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: project in $select.items --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-0" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+</project-list>
+                <branch-list class="select-list ng-scope ng-isolate-scope"><div ng-show="branchList.length > 1" class="select-list ng-hide">
+    <i class="Icon-separator select-list"></i>
+    <div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-not-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="selected.branch" theme="select2" search-enabled="true" on-select="checkoutBranch($item)"><a class="select2-choice ui-select-match ng-scope" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude="">
+            <span class="ng-binding ng-scope">Branch: master</span>
+        </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-1" aria-label="Select box" aria-activedescendant="ui-select-choices-row-1-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search" style="width: 10px;"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="branch in branchList | filter: { name : $select.search}"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-1" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: branch in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: branch in $select.items --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-1" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+</div>
+</branch-list>
+            </div>
+</div></app-header-left>
+
+            <app-header-center class="ng-isolate-scope">
+<div class="AppHeaderCenter__app-header-center___2gOIf">
+    <trial-banner class="ng-isolate-scope">
+<!-- ngIf: vm.isInTrial -->
+</trial-banner>
+</div></app-header-center>
+
+            <app-header-right class="ng-isolate-scope"><div app-header-right="" class="AppHeaderRight__app-header-right___3jbWK" ng-transclude="">
+                <!-- ngIf: vm.extensionService.hasUpdate -->
+                <educate-panel-action class="ng-scope ng-isolate-scope">
+            <header-action class="flex-row ng-isolate-scope" title="Education Panel" label="Educate" icon="educate" on-click="vm.showEducationPanel()">
+            <button class="HeaderAction__header-action___18h6L " ng-click="vm.onClick()" title="Education Panel">
+              <i class="Icon-educate" aria-hidden="true"></i>
+              <span class="IconLabel HeaderAction__icon-label___208Qu ng-binding">Educate</span>
+            </button>
+            </header-action>
+            </educate-panel-action>
+                <!-- ngIf: !vm.scenarioService.isInDemoProject() --><header-action title="Add new branch" label="Fork" icon="add-branch" on-click="vm.createNewBranch()" ng-if="!vm.scenarioService.isInDemoProject()" class="ng-scope ng-isolate-scope">
+            <button class="HeaderAction__header-action___18h6L " ng-click="vm.onClick()" title="Add new branch">
+              <i class="Icon-add-branch" aria-hidden="true"></i>
+              <span class="IconLabel HeaderAction__icon-label___208Qu ng-binding">Fork</span>
+            </button>
+            </header-action><!-- end ngIf: !vm.scenarioService.isInDemoProject() -->
+                <header-action title="Add New Test" label="New test" icon="plus" on-click="vm.createNewTest()" class="ng-scope ng-isolate-scope">
+            <button class="HeaderAction__header-action___18h6L " ng-click="vm.onClick()" title="Add New Test">
+              <i class="Icon-plus" aria-hidden="true"></i>
+              <span class="IconLabel HeaderAction__icon-label___208Qu ng-binding">New test</span>
+            </button>
+            </header-action>
+                <div class="Icon-separator--center --grey ng-scope"></div>
+                <user-menu class="ng-scope ng-isolate-scope">
+<div class="UserMenu__user-main___FhoVO">
+    <user-avatar-small on-click="vm.toggleProfileMenu($event)" class="ng-isolate-scope">
+            <div class="flex-row-center">
+                <!-- ngIf: vm.userService.isLoggedIn() && vm.userImage --><img ng-if="vm.userService.isLoggedIn() &amp;&amp; vm.userImage" class="UserAvatar__user-avatar___2IPV8 UserAvatar__user-avatar-small___2LU6N ng-scope UserAvatar__clickable___3kL3d" ng-class="{'UserAvatar__clickable___3kL3d': vm.onClick}" ng-click="vm.onClick({$event})" ng-src="https://lh3.googleusercontent.com/-LsVaaDpz050/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbDhoHbP2R1w0hqtqs05Q8Ffc1ZiJA/mo/photo.jpg?sz=50" src="https://lh3.googleusercontent.com/-LsVaaDpz050/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbDhoHbP2R1w0hqtqs05Q8Ffc1ZiJA/mo/photo.jpg?sz=50"><!-- end ngIf: vm.userService.isLoggedIn() && vm.userImage -->
+                     
+                 <!-- ngIf: vm.userService.isLoggedIn() && !vm.userImage -->
+            </div>
+            </user-avatar-small>
+
+    <!-- ngIf: vm.showSubMenu -->
+</div>
+</user-menu>
+            </div></app-header-right>
+        </div>
+    </div>
+</div></app-header>
+    </default-header><!-- end ngIf: showSideBarAndHeader() -->
+      <!-- ngIf: showCompanyHeader() -->
+      <app-banner class="ng-isolate-scope">
+<!-- ngIf: vm.appBannerService.shouldDisplayTrialBanner() -->
+<!-- ngIf: vm.appBannerService.shouldDisplayOldVersionBanner() -->
+</app-banner>
+    </div><!-- end ngIf: authenticated() && !isStyleguide() && !isCodePage() -->
+    <!-- ngIf: authenticated() && !isStyleguide() && !isCodePage() --><validate-phone-number ng-if="authenticated() &amp;&amp; !isStyleguide() &amp;&amp; !isCodePage()" class="ng-scope ng-isolate-scope"></validate-phone-number><!-- end ngIf: authenticated() && !isStyleguide() && !isCodePage() -->
+    <div id="main-pane" ng-class="{
+      'App-sidebar-disabled': !showSideBarAndHeader(),
+      'authenticated': authenticated() || isStyleguide() || isCodePage(),
+      'styleguide': isStyleguide(),
+      'code-mode': isCodePage()
+    }" class="authenticated">
+      <main class="App-main" ng-class="{'isLoading': isLoading}" data-loading-text="Loading...">
+        <!-- uiView: --><ui-view class="ng-scope"><!-- uiView: --><ui-view class="ng-scope"><step-contents class="ng-scope ng-isolate-scope"><div class="Scenario isSidebarCollapsed" ng-class="{
+  'isPlaying': scenarioService.isPlaying,
+  'isSidebarOpened': sideBarOpened,
+  'isSidebarCollapsed': !sideBarOpened,
+  'isStepViewer': stepViewer.isOn(),
+  'isLoading': vm.loader.isTestLoading,
+  'isIntro': vm.userAction.tipsShowing
+  }" ng-switch="" on="vm.getEditorType()" data-loading-text="Loading...">
+  <!-- StepContent start -->
+    <!-- ngSwitchWhen: mouse-step-editor -->
+
+    <!-- ngSwitchWhen: code-editor -->
+    <!-- ngSwitchWhen: network-code-editor -->
+    <!-- ngSwitchWhen: email-code-editor -->
+
+    <!-- ngSwitchWhen: cli-code-editor -->
+    <!-- ngSwitchWhen: cli-download-file -->
+
+    <!-- ngSwitchWhen: group-editor -->
+    <!-- ngSwitchWhen: text-validation-step-editor -->
+    <!-- ngSwitchWhen: scenario-editor --><scenario-step-editor class="Scenario-editor ng-scope ng-isolate-scope" ng-switch-when="scenario-editor" test-name="getTestName()" step="vm.step" callbacks="callbacks" should-save=""><div class="Scenario-editor-header">
+    <!-- Test name -->
+    <div class="Scenario-editor-header-name-parent">
+        <div class="Scenario-editor-header-name ng-binding" title="untitled test">untitled test</div>
+    </div>
+
+    <!-- Actions -->
+    <editor-toolbar callbacks="callbacks" class="ng-isolate-scope">
+    <div class="Scenario-actions">
+    <!-- ngIf: vm.hostService.hasEditorTabs -->
+
+    <!-- Record -->
+    <div class="record-button">
+        <button class="Recording" ng-class="{'is-recording': vm.scenarioService.isRecording}" ng-click="vm.toggleRecording()" ng-disabled="vm.scenarioService.isRecBtnDisabled()" title="Toggle Recording" aria-label="Toggle Recording">
+            <i class="Icon-record" aria-hidden="true">
+            </i>
+        </button>
+    </div>
+
+    <!-- Play actions -->
+    <play-button current-test-base-url="vm.scenarioService.currentBaseUrl" current-test-config="vm.scenarioService.currentTestConfig" class="ng-isolate-scope"><!-- Play -->
+<div class="PlayButton" ng-class="{incognito: vm.model.isIncognitoChecked}">
+    <button ng-click="vm.play($event, 'toolbar-play-button')" ng-class="{'Icon-play': !vm.scenarioService.isPlaying || vm.scenarioService.isPaused, 'Icon-pause': vm.scenarioService.isPlaying &amp;&amp; ! vm.scenarioService.isPaused}" ng-disabled="vm.scenarioService.isPlayBtnDisabled()" title="Play Scenario (F8)" aria-label="Play Scenario (F8)" uib-tooltip="Running locally in Incognito" tooltip-enable="vm.model.isIncognitoChecked" tooltip-placement="bottom" tooltip-class="tst-basic-tooltip" disabled="disabled" class="Icon-play">
+    </button>
+    <!-- ngIf: !vm.isDropdownOpened && vm.extensionInstalled --><div ng-if="!vm.isDropdownOpened &amp;&amp; vm.extensionInstalled" class="caret-container ng-scope">
+        <i ng-click="vm.openDropdown($event)" class="Icon-caret-down"></i>
+    </div><!-- end ngIf: !vm.isDropdownOpened && vm.extensionInstalled -->
+
+    <div class="caret-container ng-hide" ng-show="vm.isDropdownOpened">
+        <i class="Icon-caret-up"></i>
+        <div class="PlayButton-dummy"></div>
+        <div class="PlayButton-menu" on-click-outside="vm.closeDropdown()" on-click-outside-ignore="vm.isDropdownClosed()">
+                <!-- ngIf: !vm.isMobile() --><div class="PlayButton-menu-item incognito-item ng-scope" ng-if="!vm.isMobile()">
+                    <input type="checkbox" ng-model="vm.model.isIncognitoChecked" ng-change="vm.incognitoChanged()" class="ng-pristine ng-untouched ng-valid ng-empty">
+                    <span class="f-row-center" ng-click="vm.toggleIncognito()">
+                        <i class="Icon-incognito">
+                            <span class="path1"></span><span class="path2"></span>
+                        </i>
+                        <span>Run in Incognito mode</span>
+                    </span>
+                </div><!-- end ngIf: !vm.isMobile() -->
+            <div class="PlayButton-menu-item" ng-click="vm.play($event, 'dropdown-play-button')">
+                <i class="Icon-play"></i>
+                <!-- ngIf: vm.model.isIncognitoChecked -->
+                <span>Run locally</span>
+            </div>
+            <div class="PlayButton-menu-item" ng-click="vm.playStep($event)">
+                <i class="Icon-play-step-by-step"></i>
+                <!-- ngIf: vm.model.isIncognitoChecked -->
+                <span>Run locally step by step</span>
+            </div>
+            <div class="PlayButton-menu-item" ng-disabled="!vm.currentTestHasResult()" ng-click="vm.reRun($event, 'dropdown-reRun-button')" disabled="disabled">
+                <i class="Icon-rerun"></i>
+                <!-- ngIf: vm.model.isIncognitoChecked -->
+                <span>Rerun locally with same params</span>
+            </div>
+            <!-- ngIf: vm.showPlayRemoteButton() --><div ng-if="vm.showPlayRemoteButton()" class="PlayButton-menu-item PlayButton-remote ng-scope" ng-class="{'PlayButton-remote-edit-mode': vm.isEditRemoteClicked, 'dontHover': vm.isEditRemoteClicked}" ng-click="!vm.isEditRemoteClicked &amp;&amp; vm.runRemoteRun($event)">
+                <div class="remote-edit-container">
+                    <span class="Icon-remote-run--hover">
+                        <span class="path1"></span><span class="path2"></span>
+                    </span>
+                    <span class="Icon-remote-run">
+                        <span class="path1"></span><span class="path2"></span>
+                    </span>
+                    <span class="remote-cloud">Run on a grid</span>
+                    <span class="remote-edit" ng-show="!vm.isEditRemoteClicked" ng-click="vm.openEditRemoteRun($event)">Edit</span>
+                </div>
+                <div class="remote-config-container" ng-show="!vm.isEditRemoteClicked">
+                    <div class="remote-config ng-binding">Chrome | 1024x680</div>
+                    <div class="remote-config-base-url ng-binding"></div>
+                    <div class="remote-config-grid ng-binding is-missing" ng-class="{ 'is-missing': !vm.preferredGrid }
+                    ">Choose grid</div>
+                </div>
+                <div class="remote-config-edit ng-hide" ng-show="vm.isEditRemoteClicked">
+                    <div class="remote-config-edit-inputs">
+                        <div class="select-list">
+                            <div class="test-config-select ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-not-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" ng-model="vm.testConfig" theme="select2" search-enabled="false" on-select="vm.selectTestConfig($item)" ng-disabled="!vm.enableConfigs"><a class="select2-choice ui-select-match ng-scope" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding ng-hide"></span> <span ng-hide="$select.isEmpty()" class="select2-chosen" ng-transclude="">
+                                    <span class="remote-config-select-name ng-binding ng-scope">untitled configuration</span>
+                                    <span class="remote-config-select-res ng-binding ng-scope">1024x680</span>
+                                </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="ui-select-header ng-scope" ng-click="vm.addNewConfig()" ng-show="!vm.isMobileWeb()">
+                                    <span class="remote-config-add-text ng-scope">Add new config</span>
+                                    <span class="remote-config-add-icon ng-scope">
+                                        <i class="Icon-plus--circle"></i>
+                                    </span>
+                                </div><div class="select2-search ng-hide" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-29" aria-label="Select box" aria-activedescendant="ui-select-choices-row-29-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="config in vm.testConfigs track by $index"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-29" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: config in $select.items track by $index --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-29" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+                        </div>
+                        <input class="remote-base-url ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.baseUrl" placeholder="" ng-class="{'remote-base-url-error': vm.isInvalidBaseUrl}">
+
+                        <grid-selector-medium on-grid-change="vm.setGrid(grid)" class="ng-isolate-scope">
+    <div class="GridSelector__grid-selector___1-s6P GridSelector__grid-selector-medium___1I_4y flex-col-stretch">
+        <!-- ngIf: vm.label -->
+        <div class="ui-select-container select2 select2-container ng-pristine ng-untouched ng-valid ng-scope ng-empty" ng-class="{'select2-container-active select2-dropdown-open open': $select.open, 'select2-container-disabled': $select.disabled, 'select2-container-active': $select.focus, 'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}" theme="select2" search-enabled="false" ng-disabled="vm.isNoGridAvailable" on-select="vm.onGridChange({ grid: vm.grid })" ng-model="vm.grid"><a class="select2-choice ui-select-match ng-scope select2-default" ng-class="{'select2-default': $select.isEmpty()}" ng-click="$select.toggle($event)" aria-label="Select box select" placeholder="Select a grid"><span ng-show="$select.isEmpty()" class="select2-chosen ng-binding">Select a grid</span> <span ng-hide="$select.isEmpty()" class="select2-chosen ng-hide" ng-transclude="">
+                <span class="ng-binding ng-scope">  </span>
+            </span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class="select2-arrow ui-select-toggle"><b></b></span></a><div class="ui-select-dropdown select2-drop select2-with-searchbox select2-drop-active select2-display-none" ng-class="{'select2-display-none': !$select.open}"><div class="select2-search ng-hide" ng-show="$select.searchEnabled"><input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-owns="ui-select-choices-30" aria-label="Select box" aria-activedescendant="ui-select-choices-row-30-0" class="ui-select-search select2-input ng-pristine ng-untouched ng-valid ng-empty" ng-model="$select.search"></div><ul tabindex="-1" class="ui-select-choices ui-select-choices-content select2-results ng-scope" repeat="grid in vm.grids track by grid._id"><li class="ui-select-choices-group" ng-class="{'select2-result-with-children': $select.choiceGrouped($group) }"><div ng-show="$select.choiceGrouped($group)" class="ui-select-choices-group-label select2-result-label ng-binding ng-hide" ng-bind="$group.name"></div><ul role="listbox" id="ui-select-choices-30" ng-class="{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }" class="select2-result-single"><!-- ngRepeat: grid in $select.items track by grid._id --><!-- ngIf: $select.open --><!-- end ngRepeat: grid in $select.items track by grid._id --><!-- ngIf: $select.open --><!-- end ngRepeat: grid in $select.items track by grid._id --><!-- ngIf: $select.open --><!-- end ngRepeat: grid in $select.items track by grid._id --><!-- ngIf: $select.open --><!-- end ngRepeat: grid in $select.items track by grid._id --><!-- ngIf: $select.open --><!-- end ngRepeat: grid in $select.items track by grid._id --><!-- ngIf: $select.open --><!-- end ngRepeat: grid in $select.items track by grid._id --><!-- ngIf: $select.open --><!-- end ngRepeat: grid in $select.items track by grid._id --></ul></li></ul><div class="ui-select-no-choice"></div></div><ui-select-single></ui-select-single><input ng-disabled="$select.disabled" class="ui-select-focusser ui-select-offscreen ng-scope" type="text" id="focusser-30" aria-label="Select box focus" aria-haspopup="true" role="button"></div>
+
+        <!-- ngIf: vm.isShowingError && vm.isNoGridAvailable -->
+
+        <!-- ngIf: vm.isShowingError && vm.hasGotDeletedGrid -->
+    </div></grid-selector-medium>
+                    </div>
+
+                    <!-- ngIf: vm.isInvalidBaseUrl -->
+                    <div class="remote-edit-button">
+                        <button class="tst-button" ng-disabled="!vm.preferredGrid._id" ng-click="vm.runRemoteRun($event)" disabled="disabled">Run</button>
+                        <button class="tst-button tst-button-transparent" ng-click="vm.closeEditRemoteRun($event)">Close</button>
+                    </div>
+                </div>
+            </div><!-- end ngIf: vm.showPlayRemoteButton() -->
+        </div>
+    </div>
+    <!-- ngIf: vm.scenarioService.isPlaying -->
+</div>
+
+
+<span ng-mouseleave="vm.closeDropdown('span')" class="PlayButton-dummy"></span>
+
+</play-button>
+
+    <!-- ngIf: vm.featureFlagsService.flags.allowUndoRedo.isEnabled() -->
+    <!-- ngIf: vm.featureFlagsService.flags.allowUndoRedo.isEnabled() -->
+    <!-- ngIf: vm.featureFlagsService.flags.allowUndoRedo.isEnabled() -->
+
+    <!-- Separator -->
+    <button disabled="" class="Icon-separator"></button>
+
+    <!-- Copy -->
+    <button class="Icon-copy_full" ng-click="vm.scenarioService.copySelection()" ng-disabled="!vm.scenarioService.hasSelection()" title="Copy" aria-label="Copy" disabled="disabled">
+    </button>
+
+    <!-- Paste -->
+    <button class="Icon-paste" ng-click="vm.scenarioService.pasteSteps()" ng-disabled="!vm.scenarioService.hasCopyClipboardData()" title="Paste" aria-label="Paste" disabled="disabled">
+    </button>
+
+    <!-- Separator -->
+    <button disabled="" class="Icon-separator"></button>
+
+    <!-- Labels list -->
+    <label-list disabled="vm.scenarioService.isInDemoProject() || vm.scenarioService.isCodeFulTest()" current-tests-ids="[vm.scenarioService.current.id]" before-open="vm.beforeOpenLabels()" title="Edit labels for the test" location="editor-toolbar" class="ng-isolate-scope"><div class="Scenario-labels">
+    <!-- Label -->
+    <button ng-disabled="disabled" class="Icon-tag--full" ng-click="toggleLabels()" aria-label="Add labels to test">
+    </button>
+    <popup-list list="labels" compare-to-list="currentLabels" interactive="true" multiselect="true" action="Label as:" on-select="addTestLabel(item)" on-un-select="removeTestLabel(item)" is-open="labelsOpened" is-loading="isLoadingLabels" class="ng-isolate-scope"><!-- ngIf: isOpen -->
+</popup-list>
+</div>
+</label-list>
+
+    <!-- Add group -->
+    <button class="Icon-addGroup" ng-click="vm.callbacks.addGroup()" ng-disabled="!vm.scenarioService.allowAddGroup()" title="Add group" aria-label="Add group">
+    </button>
+
+    <!-- Delete -->
+    <button class="Icon-delete" ng-click="vm.scenarioService.deleteSelection()" ng-disabled="!vm.scenarioService.hasSelection()" title="Delete" aria-label="Delete" disabled="disabled">
+    </button>
+
+    <!-- Separator -->
+    <button disabled="" class="Icon-separator"></button>
+
+    <!-- Export to Code -->
+    <!-- ngIf: vm.showExportToCode() --><button class="export-to-code ng-scope" ng-click="vm.exportToCode()" }="" title="Export to code" ng-if="vm.showExportToCode()" aria-label="Export to code" style="">
+        <i class="Icon-export-to-code"></i>
+    </button><!-- end ngIf: vm.showExportToCode() -->
+    <!-- ngIf: vm.showExportToCode() && !vm.exportToCodeToolbarOpened --><div ng-if="vm.showExportToCode() &amp;&amp; !vm.exportToCodeToolbarOpened" class="caret-container ng-scope">
+        <i ng-click="vm.toggleExportToCodeToolbar($event)" class="Icon-caret-down"></i>
+    </div><!-- end ngIf: vm.showExportToCode() && !vm.exportToCodeToolbarOpened -->
+    <!-- ngIf: vm.showExportToCode() --><div class="caret-container ng-scope ng-hide" ng-if="vm.showExportToCode()" ng-show="vm.exportToCodeToolbarOpened">
+        <i class="Icon-caret-up"></i>
+        <div class="PlayButton-dummy"></div>
+        <div class="PlayButton-menu" on-click-outside="vm.handleExportToolbarClickOutside()">
+            <div class="PlayButton-menu-item incognito-item">
+            <span class="f-row-center" ng-click="vm.recordNewLocator()">
+                <i class="Icon-gauge">
+                    <span class="path1"></span><span class="path2"></span>
+                </i>
+                <span>Create New Locator</span>
+            </span>
+        </div>
+
+        </div>
+    </div><!-- end ngIf: vm.showExportToCode() -->
+
+
+    <!-- Save test "-->
+    <button class="toolbar-cta save flex-row-center hoverSave" ng-disabled="!vm.scenarioService.currentBaseUrl || vm.scenarioService.isInDemoProject() || vm.scenarioService.isCodeFulTest()" ng-class="[{'isShouldSave': shouldSave}, {'hoverSave': !vm.scenarioService.isInDemoProject() &amp;&amp; !vm.scenarioService.isCodeFulTest()}]" ng-click="vm.scenarioService.saveTest()" title="Save Test" aria-label="Save Test" disabled="disabled">
+        Save
+    </button>
+
+    <button ng-click="vm.callbacks.toggleSideBar()" class="toolbar-cta show-property-panel flex-row-center" title="Show step properties" aria-label="Show step properties">
+        <i class="Icon Icon-cog"></i>
+    </button>
+</div>
+    </editor-toolbar>
+</div>
+
+<!-- Notifications -->
+<editor-notification display-errors="true" display-codeful-error="true" notifications="scenarioService.notifications" class="ng-isolate-scope">
+<div class="EditorNotification__editorNotification___1229j" ng-class="{ 'EditorNotification__high-z-index___aURB9': vm.highZIndex }">
+    <!-- ngIf: vm.showCodefulWarning && vm.displayCodefulError -->
+
+    <!-- ngIf: vm.initialized --><editor-warning-notification ng-if="vm.initialized" warning="vm.warning" show-warning="vm.showWarning" show-dismiss="true" on-dismiss="vm.dismissWarning()" step-id="vm.warningStepId" class="ng-scope ng-isolate-scope">
+<div class="EditorWarningNotification__warning___3csGg" ng-class="{EditorWarningNotification__visible___14LrK: vm.showWarning}">
+    <div ng-switch="vm.warning" class="EditorWarningNotification__inner-warning___3LCeA">
+
+        <!-- ngSwitchWhen: No app to choose an element from. -->
+
+        <!-- ngSwitchWhen: codeful-block-test-save -->
+
+    </div>
+    <!-- ngIf: vm.showDismiss --><button ng-if="vm.showDismiss" ng-click="vm.onDismiss()" class="EditorWarningNotification__close-button___25cHY ng-scope">
+        <i class="Icon-close"></i>
+    </button><!-- end ngIf: vm.showDismiss -->
+</div>
+</editor-warning-notification><!-- end ngIf: vm.initialized -->
+
+    <!-- ngIf: vm.displayErrors && vm.failedStep -->
+</div>
+</editor-notification>
+
+
+<div class="Scenario-editor-main Scenario-editor-step ui-selectable" overflow-container="" restore-editor-scroll-position="">
+    <div class="test-config">
+        <!-- ngIf: !scenarioService.currentTestResultRunConfig --><div class="test-config-def ng-scope" ng-if="!scenarioService.currentTestResultRunConfig">
+            <!-- ngIf: (scenarioService.currentConfig.baseUrl || scenarioService.currentBaseUrl) && !projectsService.isMobile() -->
+            <!-- ngIf: scenarioService.currentConfig.baseUrl || scenarioService.currentBaseUrl -->
+        </div><!-- end ngIf: !scenarioService.currentTestResultRunConfig -->
+        <!-- ngIf: scenarioService.currentTestResultRunConfig -->
+
+
+        <div class="test-config-log">
+            <test-result class="ng-isolate-scope">
+<!-- ngIf: !vm.isState('done') && vm.showNoResultDotDialog --><div class="TestResult__history-drop-no-result___2D--q ng-scope" ng-if="!vm.isState('done') &amp;&amp; vm.showNoResultDotDialog">
+    <div ng-mouseleave="linksTooltipIsOpen = false" class="TestResult__run-info___3jCKC TestResult__info-box___nIaC_ TestResult__only-info___pByuS" ng-class="{ 'TestResult__only-info___pByuS': !vm.hasAnyExtraInfo }" ng-mouseover="linksTooltipIsOpen = true">
+<i class="Icon-more" tooltip-is-open="linksTooltipIsOpen" tooltip-trigger="'none'" uib-tooltip-template="'linksTooltipTemplate'" tooltip-class="Tooltip--white TestResult__links-tooltip___Te2Z4" tooltip-placement="bottom">
+   </i>
+</div>
+</div><!-- end ngIf: !vm.isState('done') && vm.showNoResultDotDialog -->
+<!-- ngIf: vm.isState('done') -->
+</test-result>
+        </div>
+    </div>
+    <!-- ngIf: showSetupStepWarning() && !scenarioService.showPixelValidationWarnings -->
+    <!-- ngIf: scenarioService.showPixelValidationWarnings && !showSetupStepWarning() -->
+    <!-- ngIf: scenarioService.showPixelValidationWarnings && showSetupStepWarning() -->
+    <div class="Scenario-editor-main-steps" ng-class="{stopped: scenarioService.isPaused}">
+        <!-- ngIf: scenarioService.currentBaseUrl || step.getStepContent().steps.length > 0 -->
+
+        <!-- ngRepeat: childStep in step.getStepContent().steps track by childStep.id -->
+
+        <!-- ngIf: !scenarioService.currentBaseUrl && step.getStepContent().steps.length === 0 --><step-pair ng-if="!scenarioService.currentBaseUrl &amp;&amp; step.getStepContent().steps.length === 0" class="abstract ng-scope">
+            <div class="step-wrapper step-button-states">
+                <div class="step">
+                    <div class="step-action"></div>
+                </div>
+                <div class="step-label"></div>
+            </div>
+
+
+            <step-spacer index="0" callbacks="callbacks" step="null" data-is-insertion-point="false" class="ng-isolate-scope"><div class="step-spacer-container flex-row-center">
+  <i class="StepSpacer-arrow Icon-arrowRight"></i>
+
+  <div class="play-actions">
+    <!-- ngIf: !isMenuShown --><span play-from-here="" uib-tooltip="Play From Here" tooltip-placement="right" class="item ng-scope" ng-if="!isMenuShown" ng-click="callbacks.runFromHere($event, step)">
+      <i class="Icon-play"></i>
+    </span><!-- end ngIf: !isMenuShown -->
+    <!-- ngIf: !isMenuShown --><span toggle-breakpoint="" uib-tooltip="Toggle Breakpoint" tooltip-placement="right" class="item ng-scope" ng-if="!isMenuShown" ng-click="callbacks.toggleBreakpoint(step); $event.stopPropagation()" data-has-breakpoint="">
+      <i class="Icon-pause"></i>
+      <svg breakpoint-indicator="" width="30px" height="30px" viewBox="-15 -15 30 30" xmlns="http://www.w3.org/2000/svg">
+        <circle fill="none" stroke-width="3" stroke-linecap="round" cx="-.5" cy="-.5" r="13"></circle>
+      </svg>
+    </span><!-- end ngIf: !isMenuShown -->
+  </div>
+
+  <div class="StepSpacer-plus" ng-click="isMenuShown ? closeMenu($event) : showMenu($event)" ng-class="{
+      'arrow-visible': isMenuShown &amp;&amp; !isCheckingMenuPosition,
+      'top': menuDirection === 'top',
+      'right': menuDirection.indexOf('right') === 0,
+      'left': menuDirection.indexOf('left') === 0
+    }">
+    <!-- ngIf: !isMenuShown --><i ng-if="!isMenuShown" class="Icon-plus ng-scope"></i><!-- end ngIf: !isMenuShown -->
+    <!-- ngIf: isMenuShown -->
+  </div>
+
+  <!-- ngIf: isMenuShown -->
+</div>
+</step-spacer>
+        </step-pair><!-- end ngIf: !scenarioService.currentBaseUrl && step.getStepContent().steps.length === 0 -->
+    </div>
+</div>
+</scenario-step-editor><!-- end ngSwitchWhen: -->
+    <!-- ngSwitchWhen: navigation-editor -->
+    <!-- ngSwitchWhen: sleep-editor -->
+    <!-- ngSwitchWhen: text-editor -->
+    <!-- ngSwitchWhen: annotation-editor -->
+    <!-- ngSwitchWhen: api-step-editor -->
+    <!-- ngSwitchWhen: set-cookie-editor -->
+  <!-- StepContent end -->
+
+    <div on-tree-focus="callbacks.toggleSideBar(true)" ng-class="{'App-banner-displayed': vm.appBannerService.showAppBanner()}" class="Scenario-panel ng-isolate-scope">
+        <!-- ngIf: !scenarioService.isTestDataEditor && focusedStep() --><deck-nav ng-if="!scenarioService.isTestDataEditor &amp;&amp; focusedStep()" class="ng-scope ng-isolate-scope"><div class="-panel-visible" ng-transclude="">
+            <deck-nav-card name="pp" fixed="true" class="ng-scope ng-isolate-scope"><div ng-hide="!fixed &amp;&amp; !selected" ng-transclude="" class="deck-nav-card">
+                <step-property-panel-dashboard step="focusedStep()" callbacks="callbacks" class="ng-scope ng-isolate-scope"><div class="pp-title" ng-click="toggleSideBar()">
+    <div class="toggle-sidebar-button"><i class="Icon-angle-right"></i></div>
+    <div class="captions">
+      <span class="caption">Properties</span>
+      <span class="sub-caption ng-binding" uib-tooltip="" tooltip-placement="bottom" tooltip-class="Tooltip--black">
+          Test configuration
+      </span>
+    </div>
+    <!-- ngIf: step.type === 'shared-step-instance' && step.isSharedComponent -->
+</div>
+
+<div class="panel --with-footer" ng-class="{ '--with-footer': doesStepHaveRevisions() }">
+
+    <!-- Step Result -->
+    <step-result-panel step="step" class="ng-isolate-scope">
+<!-- ngIf: vm.stepHasResult || vm.showIterations -->
+</step-result-panel>
+    <!-- ngIf: showParamsLensPropertyPanel(step) -->
+
+    <!-- Step-specific panels -->
+    <ng-switch on="step.getType()">
+        <!-- ngSwitchWhen: setup|scenario --><test-property-panel ng-switch-when="setup|scenario" ng-switch-when-separator="|" step="step" name="scenarioService.current.name" description="scenarioService.current.description" config-name="scenarioService.current.testConfig.name" callbacks="callbacks" class="ng-scope ng-isolate-scope"><!-- Test log -->
+<label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label --><field-label ng-if="!tfvm.hasCustomLabel &amp;&amp; tfvm.label" class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-binding ng-scope">
+    Base URL
+  </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label><!-- end ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="'Base URL'" placeholder="http://yourapp.com" ng-model="scenarioService.currentBaseUrl" ng-model-options="{ debounce: 50 }">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+<hr with-spacing="">
+<label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label --><field-label ng-if="!tfvm.hasCustomLabel &amp;&amp; tfvm.label" class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-binding ng-scope">
+    Test name
+  </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label><!-- end ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="'Test name'" ng-model="name" ng-change="onTestNameChange(name)" blur-on-enter="" title="" placeholder="Click to change test name">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+<label text-field="" class="TextField__textfield-container___2uNIw ng-scope">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label --><field-label ng-if="!tfvm.hasCustomLabel &amp;&amp; tfvm.label" class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-binding ng-scope">
+    Test description
+  </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label><!-- end ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    
+  <textarea textfield-input="" class="TextField__textfield-multiline___ZkYd- TextField__textfield-textarea___3U6z1 ng-pristine ng-untouched ng-valid ng-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="'Test description'" ng-model="description" ng-change="onTestDescriptionChange(description)" title="" placeholder="Click to change test description"></textarea>
+
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+<!-- ngIf: !projectsService.isMobile() --><hr with-spacing="" ng-if="!projectsService.isMobile()" class="ng-scope"><!-- end ngIf: !projectsService.isMobile() -->
+<!-- ngIf: !projectsService.isMobile() --><div ng-if="!projectsService.isMobile()" class="ng-scope">
+    <field-label class="ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-scope">
+      Configuration
+    </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+    <field-label class="ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude>
+      <span class="property-input pp-config-input ng-scope">
+        <span class="ng-binding">untitled configuration</span>
+        <i class="Icon-edit property-input-edit" role="button" title="Edit Configuration" deck-nav-link="editConfig"></i>
+      </span>
+    </ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+    <field-label class="ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude>
+      <a href="" class="pp-link ng-scope" deck-nav-link="chooseConfig">Choose Other</a>
+    </ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+</div><!-- end ngIf: !projectsService.isMobile() -->
+
+<tms-test-property-panel class="ng-isolate-scope">
+<!-- ngIf: vm.tmsService.connected -->
+</tms-test-property-panel>
+
+<hr with-spacing="">
+<test-data-property-panel callbacks="callbacks" class="ng-isolate-scope"><button class="pp-button" ng-click="editTestData()">
+    <span class="pp-button-text">Test Data</span>
+    <i class="pp-button-icon Icon-arrow-forward"></i>
+</button>
+</test-data-property-panel>
+</test-property-panel><!-- end ngSwitchWhen: -->
+        <!-- ngSwitchWhen: group -->
+        <!-- ngSwitchWhen: sleep -->
+        <!-- ngSwitchWhen: refresh -->
+        <!-- ngSwitchWhen: random-value-generator -->
+        <!-- ngSwitchWhen: navigation -->
+        <!-- ngSwitchWhen: text -->
+        <!-- ngSwitchWhen: screenshot -->
+        <!-- ngSwitchWhen: mouse -->
+        <!-- ngSwitchWhen: input-file|drop-file -->
+        <!-- ngSwitchWhen: android-device-key|ios-device-key -->
+        <!-- ngSwitchWhen: android-key-board-special-keys|ios-key-board-special-keys -->
+        <!-- ngSwitchWhen: hover -->
+        <!-- ngSwitchWhen: android-swipe|ios-swipe -->
+        <!-- ngSwitchWhen: android-tap|ios-tap -->
+        <!-- ngSwitchWhen: android-long-click|ios-long-click -->
+        <!-- ngSwitchWhen: user-code|validation-code-step|wait-for-code-step|action-code-step|cli-action-code-step|cli-validation-code-step|cli-wait-for-code-step|email-validation-step|network-validation-step -->
+        <!-- ngSwitchWhen: cli-validation-download-file|cli-wait-for-download-file -->
+        <!-- ngSwitchWhen: email-validation-step -->
+        <!-- ngSwitchWhen: condition-step|cli-condition-step -->
+        <!-- ngSwitchWhen: shared-step-instance -->
+        <!-- ngSwitchWhen: scroll|android-scroll|ios-scroll -->
+        <!-- ngSwitchWhen: resize-window -->
+        <!-- ngSwitchWhen: simple-ui-verification|wait-for-simple-ui-verification -->
+        <!-- ngSwitchWhen: element-validation|wait-for-element-validation -->
+        <!-- ngSwitchWhen: negative-element-validation|wait-for-negative-element-validation -->
+        <!-- ngSwitchWhen: text-validation|wait-for-text-validation -->
+        <!-- ngSwitchWhen: checkbox-validation|radio-validation -->
+        <!-- ngSwitchWhen: wheel -->
+        <!-- ngSwitchWhen: api-validation|api-action -->
+        <!-- ngSwitchWhen: set-cookie -->
+        <!-- ngSwitchWhen: get-cookie -->
+        <!-- ngSwitchWhen: extract-text -->
+        <!-- ngSwitchWhen: email-generator -->
+        <!-- ngSwitchWhen: special-key -->
+        <!-- ngSwitchDefault: -->
+    </ng-switch>
+
+    <!-- step target -->
+    <!-- ngIf: settings.showElementLocator --><step-target-property-panel ng-if="settings.showElementLocator" step="step" screen-image="step.screenImage" locate-step="step.scrollToElement || settings.elementLocator" on-view-locators="showLocators()" force-visibility="step.scrollToElement.forceVisibility || settings.elementLocator.forceVisibility" show-pre-step-delay="step.type === 'negative-element-validation' || step.type === 'wait-for-negative-element-validation'" disable-force-visibility-checkbox="step.type === 'negative-element-validation' || step.type === 'wait-for-negative-element-validation' || step.type === 'special-key'" class="ng-scope ng-isolate-scope"><!-- ngIf: vm.locateStep -->
+</step-target-property-panel><!-- end ngIf: settings.showElementLocator -->
+    <!-- ngIf: settings.elementLocator && settings.showElementLocator -->
+
+    <!-- ngIf: shouldShowUiVerificationMatchLevel() -->
+    <!-- ngIf: shouldShowUiVerificationMatchLevel() -->
+
+    <!-- conditions -->
+    <!-- ngIf: step.type !== 'condition-step' && step.type !== 'cli-condition-step' && step.type !== 'setup' && step.type !== 'scenario' -->
+
+    <!-- ngIf: step.getStepContent().isGroupStep -->
+
+    <step-timeout-property-panel step="step" class="ng-isolate-scope"><!-- ngIf: step.hasTimeoutOverrideOption() -->
+</step-timeout-property-panel>
+    <native-event-property-panel step="step" class="ng-isolate-scope">
+  <!-- ngIf: vm.step.hasNativeEventsOption() --></native-event-property-panel>
+    <auto-scroll-property-panel step="step" class="ng-isolate-scope">
+  <!-- ngIf: vm.step.hasAutoScrollOption() -->
+</auto-scroll-property-panel>
+</div>
+
+<!-- ngIf: doesStepHaveRevisions() --><div class="panel-footer ng-scope" ng-if="doesStepHaveRevisions()">
+  <span class="pp-circleIcon">
+      <i class="Icon-angle-double-right"></i>
+  </span>
+    <a href="" class="pp-link" style="margin: 0 0 0 5px;" deck-nav-link="revisions" ng-click="clickOnSeeOldRevisions()">See
+        old revisions</a>
+</div><!-- end ngIf: doesStepHaveRevisions() -->
+</step-property-panel-dashboard>
+            </div>
+</deck-nav-card>
+            <deck-nav-card name="revisions" back="pp" class="ng-scope ng-isolate-scope"><div ng-hide="!fixed &amp;&amp; !selected" ng-transclude="" class="deck-nav-card ng-hide">
+                <revisions step="focusedStep()" callbacks="callbacks" class="ng-scope ng-isolate-scope"><div class="pp-title" ng-click="ctrl.toggleSideBar()" deck-nav-link="back">
+  <div class="caption">
+    <i class="Icon-opened-arrow-left"></i>
+    Revision history
+  </div>
+</div>
+<div class="panel">
+	<ul>
+		<!-- ngRepeat: item in items track by item.id -->
+	</ul>
+
+</div>
+</revisions>
+            </div>
+</deck-nav-card>
+            <deck-nav-card name="chooseConfig" back="pp" class="ng-scope ng-isolate-scope"><div ng-hide="!fixed &amp;&amp; !selected" ng-transclude="" class="deck-nav-card ng-hide">
+                <configs class="ng-scope"><div class="pp-title" ng-click="ctrl.toggleSideBar()" deck-nav-link="back">
+  <div class="caption">
+    <i class="Icon-opened-arrow-left"></i>
+    Choose new config
+  </div>
+</div>
+<div class="panel">
+	<ul>
+		<!-- ngRepeat: item in items | orderBy:'name' -->
+	</ul>
+
+</div>
+</configs>
+            </div>
+</deck-nav-card>
+            <deck-nav-card name="editConfig" back="pp" class="ng-scope ng-isolate-scope"><div ng-hide="!fixed &amp;&amp; !selected" ng-transclude="" class="deck-nav-card ng-hide">
+                <setup-step-property-panel step="setupStep()" settings="settings" class="ng-scope ng-isolate-scope"><div class="pp-title" ng-click="ctrl.toggleSideBar()" deck-nav-link="back">
+    <div class="caption">
+        <i class="Icon-opened-arrow-left"></i>
+        Edit configuration
+    </div>
+</div>
+
+<div class="panel">
+    <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label --><field-label ng-if="!tfvm.hasCustomLabel &amp;&amp; tfvm.label" class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-binding ng-scope">
+    Name
+  </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label><!-- end ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-not-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="'Name'" ng-model="step.name" ng-disabled="projectsService.isMobileWeb()">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+
+    <hr with-spacing="">
+
+    <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label --><field-label ng-if="!tfvm.hasCustomLabel &amp;&amp; tfvm.label" class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-binding ng-scope">
+    Browser
+  </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label><!-- end ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="'Browser'" disabled="disabled" ng-value="getBrowser()" value="Chrome">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+    <!-- ngIf: !step.isMobileWeb && getBrowser() !== 'Chrome' -->
+
+    <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label --><field-label ng-if="!tfvm.hasCustomLabel &amp;&amp; tfvm.label" class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-binding ng-scope">
+    OS
+  </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label><!-- end ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="'OS'" disabled="disabled" ng-value="getOS()" value="Windows 10">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+    <!-- ngIf: !step.isMobileWeb && !isSameOS() -->
+
+    <field class="ng-isolate-scope">
+  <div class="Field__field-container___1L_iB" ng-transclude="">
+        <field-label class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-scope">Resolution</span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+        <div class="property-input--split resolution ng-scope">
+            <label text-input="" class="TextField__textfield-container___2uNIw TextField__--no-padding___KB6mu ng-scope">
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-not-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" type="number" ng-model="step.resolution.width" ng-disabled="projectsService.isMobileWeb()">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+  </label>
+            <span class="input-separator">X</span>
+            <label text-input="" class="TextField__textfield-container___2uNIw TextField__--no-padding___KB6mu ng-scope">
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-not-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" type="number" ng-model="step.resolution.height" ng-disabled="projectsService.isMobileWeb()">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+  </label>
+        </div>
+    </div>
+</field>
+
+    <hr double-spacing="">
+
+    <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label --><field-label ng-if="!tfvm.hasCustomLabel &amp;&amp; tfvm.label" class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-binding ng-scope">
+    Step timeout (milliseconds)
+  </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label><!-- end ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-not-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="'Step timeout (milliseconds)'" type="number" ng-model="step.stepTimeout">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+
+    <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label --><field-label ng-if="!tfvm.hasCustomLabel &amp;&amp; tfvm.label" class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-binding ng-scope">
+    Step delay (milliseconds)
+  </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label><!-- end ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-not-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="'Step delay (milliseconds)'" type="number" ng-model="step.stepDelay">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+
+    <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label --><field-label ng-if="!tfvm.hasCustomLabel &amp;&amp; tfvm.label" class="ng-scope ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-binding ng-scope">
+    Setup step timeout (milliseconds)
+  </span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label><!-- end ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-not-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="'Setup step timeout (milliseconds)'" type="number" ng-model="step.setupStepTimeout">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+
+    <!-- ngIf: featureFlagsService.flags.enablePlaybackHooks.isEnabled() -->
+
+    <!-- ngIf: featureFlagsService.flags.enablePlaybackHooks.isEnabled() -->
+
+</div>
+</setup-step-property-panel>
+            </div>
+</deck-nav-card>
+            <deck-nav-card name="locators" back="pp" class="ng-scope ng-isolate-scope"><div ng-hide="!fixed &amp;&amp; !selected" ng-transclude="" class="deck-nav-card ng-hide">
+                <locators step="focusedStep()" locate-step="vm.locateStep" callbacks="callbacks" iteration="focusedStep().result.iteration" locate-banner-mode="vm.locateBannerMode" class="ng-scope ng-isolate-scope"><div class="pp-title" ng-click="resetLocatorsStep(); goBack();">
+  <div class="caption">
+    <i class="Icon-opened-arrow-left"></i>
+    Locators
+  </div>
+  <!-- ngIf: iteration -->
+    <!-- ngIf: showCodefulSetupButton -->
+</div>
+<locators-panel step="step" locate-step="locateStep" element-locator="getElementLocator()" frame-locators="getFrameLocators()" locate-results-url="step.result.locateResultsUrl" frame-locate-result-url="step.result.frameLocateResultUrl" locate-banner-mode="locateBannerMode" on-locate-banner-mode-change="onLocatorsPanelBannerModeChange(bannerMode)" class="ng-isolate-scope"><!-- ngIf: vm.element -->
+</locators-panel>
+</locators>
+            </div>
+</deck-nav-card>
+            <deck-nav-card name="whileSettings" back="pp" class="ng-scope ng-isolate-scope"><div ng-hide="!fixed &amp;&amp; !selected" ng-transclude="" class="deck-nav-card ng-hide">
+                <while-settings step="focusedStep()" callbacks="callbacks" class="ng-scope ng-isolate-scope">
+<div class="pp-title" deck-nav-link="back">
+    <div class="caption">
+        <i class="Icon-opened-arrow-left"></i>
+        Advanced
+    </div>
+</div>
+<div class="panel">
+    <field-label class="ConditionSettings__first-condition___1l9Te ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-scope">
+        When a condition fails
+        </span><label class="flex-row-middle ng-scope">
+            <input type="checkbox" ng-model="vm.isWhenFailed" ng-change="vm.onWhenFailedChange(vm.isWhenFailed)" class="ng-pristine ng-untouched ng-valid ng-empty">
+            <field-label class="ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-scope">Retry for (ms)</span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+        </label>
+        <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-not-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="label" type="text" ng-disabled="!vm.isWhenFailed" ng-model="vm.failedValue" ng-change="vm.onFailedValueChange(vm.failedValue)" disabled="disabled">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+    </ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+
+    <hr>
+
+    <field-label class="ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-scope">
+        When a condition passes
+        </span><label class="flex-row-middle ng-scope">
+            <input type="checkbox" ng-model="vm.isWhenPassed" ng-change="vm.onWhenPassedChange(vm.isWhenPassed)" class="ng-pristine ng-untouched ng-valid ng-empty">
+            <field-label class="ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-scope">Verify for (ms)</span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+        </label>
+        <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-not-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="label" type="text" ng-disabled="!vm.isWhenPassed" ng-model="vm.passedValue" ng-change="vm.onPassedValueChange(vm.passedValue)" disabled="disabled">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+    </ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+</div>
+</while-settings>
+            </div>
+</deck-nav-card>
+            <deck-nav-card name="whenSettings" back="pp" class="ng-scope ng-isolate-scope"><div ng-hide="!fixed &amp;&amp; !selected" ng-transclude="" class="deck-nav-card ng-hide">
+                <when-settings step="focusedStep()" callbacks="callbacks" class="ng-scope ng-isolate-scope">
+<div class="pp-title" deck-nav-link="back">
+    <div class="caption">
+        <i class="Icon-opened-arrow-left"></i>
+        Advanced
+    </div>
+</div>
+<div class="panel">
+    <field-label class="ConditionSettings__first-condition___1l9Te ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-scope">
+        When a condition fails
+        </span><label class="flex-row-middle ng-scope">
+            <input type="checkbox" ng-model="vm.isWhenFailed" ng-change="vm.onWhenFailedChange(vm.isWhenFailed)" class="ng-pristine ng-untouched ng-valid ng-empty">
+            <field-label class="ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-scope">Retry for (ms)</span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+        </label>
+        <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-not-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="label" type="text" ng-disabled="!vm.isWhenFailed" ng-model="vm.failedValue" ng-change="vm.onFailedValueChange(vm.failedValue)" disabled="disabled">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+    </ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+
+    <hr>
+
+    <field-label class="ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-scope">
+        When a condition passes
+        </span><label class="flex-row-middle ng-scope">
+            <input type="checkbox" ng-model="vm.isWhenPassed" ng-change="vm.onWhenPassedChange(vm.isWhenPassed)" class="ng-pristine ng-untouched ng-valid ng-empty">
+            <field-label class="ng-isolate-scope">
+  <div field-label="" class="FieldLabel__field-label___2rru2">
+    <ng-transclude><span class="ng-scope">Verify for (ms)</span></ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+        </label>
+        <label text-field="" class="TextField__textfield-container___2uNIw containerVariety ng-scope" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}">
+    
+  <!-- ngIf: !tfvm.hasCustomLabel && tfvm.label -->
+  <custom-label-slot></custom-label-slot>
+
+    <div class="flex-row">
+      
+  <input textfield-input="" class="TextField__textfield-medium___2ZtW_ ng-pristine ng-untouched ng-valid ng-not-empty" ng-class="{'TextField__--error___2NBDC': !tfvm.isValidMux}" label="label" type="text" ng-disabled="!vm.isWhenPassed" ng-model="vm.passedValue" ng-change="vm.onPassedValueChange(vm.passedValue)" disabled="disabled">
+
+      
+  <custom-button-slot></custom-button-slot>
+
+    </div>
+    
+  <!-- ngIf: !tfvm.isValidMux -->
+
+  </label>
+    </ng-transclude>
+    <!-- ngIf: vm.hasSecondaryLabel -->
+  </div>
+</field-label>
+</div>
+</when-settings>
+            </div>
+</deck-nav-card>
+            <deck-nav-card name="extractModeNumber" back="pp" class="ng-scope ng-isolate-scope"><div ng-hide="!fixed &amp;&amp; !selected" ng-transclude="" class="deck-nav-card ng-hide">
+                <!-- ngIf: focusedStep().extractTextMode === 'number' -->
+            </div>
+</deck-nav-card>
+            <deck-nav-card name="extractModeDate" back="pp" class="ng-scope ng-isolate-scope"><div ng-hide="!fixed &amp;&amp; !selected" ng-transclude="" class="deck-nav-card ng-hide">
+                <!-- ngIf: focusedStep().extractTextMode === 'date' -->
+            </div>
+</deck-nav-card>
+            <deck-nav-card name="extractModeRegex" back="pp" class="ng-scope ng-isolate-scope"><div ng-hide="!fixed &amp;&amp; !selected" ng-transclude="" class="deck-nav-card ng-hide">
+                <!-- ngIf: focusedStep().extractTextMode === 'regex' -->
+            </div>
+</deck-nav-card>
+        </div>
+</deck-nav><!-- end ngIf: !scenarioService.isTestDataEditor && focusedStep() -->
+        <!-- ngIf: scenarioService.isTestDataEditor || !focusedStep() -->
+    </div>
+</div>
+<script type="text/ng-template" id="intro-record.html">
+    <img src="/assets/images/intro/tooltip-record.png" alt="">
+    <h3>Let’s start recording!</h3>
+    <p>Recorded actions will automatically turn into steps.</p>
+</script>
+
+<script type="text/ng-template" id="intro-plus.html">
+    <h3>Add actions</h3>
+    <p>Add more actions like validations, hovers, custom actions and more.</p>
+</script>
+
+<script type="text/ng-template" id="intro-play.html">
+    <img src="/assets/images/intro/tooltip-play.png" alt="">
+    <h3>Show time</h3>
+    <p>After you recorded your test, run it here and see how it works.</p>
+</script>
+
+<script type="text/ng-template" id="intro-save.html">
+    <h3>Remember to save</h3>
+    <p>When your test finished running, save it.</p>
+</script>
+
+<script type="text/ng-template" id="intro-automate.html">
+    <h3>Automate</h3>
+    <p>You can find your saved tests by clicking the Automate tab.</p>
+</script>
+
+<script type="text/ng-template" id="intro-runs.html">
+    <img src="/assets/images/intro/tooltip-runs.png" alt="">
+    <h3>Check out the test runs</h3>
+    <p>View and manage all of your test runs.</p>
+</script>
+
+<script type="text/ng-template" id="intro-cli.html">
+    <h3>Connect CLI</h3>
+    <p>Have a CLI? you can connect it from here.</p>
+</script>
+
+<script type="text/ng-template" id="intro-educate.html">
+    <img src="/assets/images/intro/tooltip-educate.png" alt="">
+    <h3>That’s a wrap!</h3>
+    <p>Learn more about becoming a Testim master user with our handy how-to guide.</p>
+</script>
+
+<script type="text/ng-template" id="iterations-list.html">
+    <h3>Iterations number</h3>
+    <p>You can switch here the number of iterations in the loop</p>
+</script>
+</step-contents></ui-view></ui-view>
+      </main>
+    </div>
+  </div>
+
+  <!-- Notifications -->
+  <notification-display name="main:display" ng-class="{'show-notification': notificationActive}" class="ng-scope" data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"><div class="notification-wrap info" ng-class="type" title="Test Completed Successfully">
+  <button class="close-btn" ng-click="closeNotification()">
+    <i class="Icon-close"></i>
+  </button>
+  <div class="massage">
+    <span class="ng-binding">Test Completed Successfully</span>
+  </div>
+</div>
+</notification-display>
+  <wait-notification-display name="wait:display" ng-class="{'show-notification': notificationActive}" class="ng-scope" data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"><div class="close-btn" ng-click="closeNotification()"></div>
+
+<!-- ngIf: type==='normal' -->
+
+<!-- ngIf: type==='select-element' -->
+
+</wait-notification-display>
+  <div id="react-root" data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"></div>
+<script type="text/javascript" src="/assets/js/bundle_f2fa4e1778756e1dc581.js?f2fa4e1778756e1dc581" data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"></script>
+
+<iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important;" aria-hidden="true" tabindex="-1" title="Intercom" data-bootstrap-modal-aria-hidden-count="2"></iframe><div id="intercom-container" class="intercom-namespace" data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"><style>html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body,html.intercom-modal-open,#intercom-container-body{overflow:hidden !important;}html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body{position:static !important;}html.intercom-mobile-messenger-active > body{height:0 !important;margin:0 !important;}iframe#intercom-frame{position:absolute !important;opacity:0 !important;width:1px !important;height:1px !important;top:0 !important;left:0 !important;border:none !important;display:block !important;z-index:-1 !important;}</style><div class="intercom-app" aria-live="polite"><div id="intercom-modal-container"></div></div></div><div id="intercom-css-container" data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"><style data-emotion="intercom-global"></style><style data-emotion="intercom"></style></div><iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="about:blank" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;" data-bootstrap-modal-aria-hidden-count="2"></iframe><iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="about:blank" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;" data-bootstrap-modal-aria-hidden-count="2"></iframe><div data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"><iframe title="Opens a widget where you can find more information" id="launcher" tabindex="0" class="zEWidget-launcher zEWidget-launcher--active" style="border: none; background: transparent; z-index: 999998; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 1; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px; width: 139px;width: 139px;width: 139px;width: 139px;"></iframe></div><div data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"><iframe title="Find more information here" id="webWidget" tabindex="-1" class="zEWidget-webWidget " style="border: none; background: transparent; z-index: 999999; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px; visibility: hidden;"></iframe></div><div data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"><iframe title="Opens a widget where you can find more information" id="launcher" tabindex="0" class="zEWidget-launcher zEWidget-launcher--active" style="border: none; background: transparent; z-index: 999998; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 1; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px; width: 139px;width: 139px;width: 139px;width: 139px;"></iframe></div><div data-bootstrap-modal-aria-hidden-count="1" aria-hidden="true"><iframe title="Find more information here" id="webWidget" tabindex="-1" class="zEWidget-webWidget " style="border: none; background: transparent; z-index: 999999; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px; visibility: hidden;"></iframe></div></body>
