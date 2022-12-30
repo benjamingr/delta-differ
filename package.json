@@ -11,7 +11,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "2.21.0",
     "@typescript-eslint/parser": "2.21.0",
-    "mocha": "7.1.0",
+    "mocha": "10.2.0",
     "@types/diff": "4.0.2",
     "@types/lru-cache": "5.1.0",
     "@types/mocha": "^7.0.1",
